@@ -7,5 +7,3 @@ Collection of daily code challenges for Codefellows 401 - Java
 ## Approach & Efficiency
 Implementing solution using Java in IntelliJ
 
-## Solution
-<!-- Embedded whiteboard image -->
