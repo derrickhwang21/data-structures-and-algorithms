@@ -10,9 +10,15 @@ public class ArrayShift{
 
         int testValue = 3;
 
+        System.out.println("Add middle index:");
         System.out.println("Original Array: " + Arrays.toString(testArray1) + " New Array: " + Arrays.toString(insertShiftArray(testArray1, testValue)));
         System.out.println("Original Array: " + Arrays.toString(testArray2) + " New Array: " + Arrays.toString(insertShiftArray(testArray2, testValue)));
         System.out.println("Original Array: " + Arrays.toString(testArray3) + " New Array: " + Arrays.toString(insertShiftArray(testArray3, testValue)));
+        System.out.println("");
+        System.out.println("Remove middle index:");
+        System.out.println("Original Array: " + Arrays.toString(testArray1) + " New Array: " + Arrays.toString(removeShiftArray(testArray1)));
+        System.out.println("Original Array: " + Arrays.toString(testArray2) + " New Array: " + Arrays.toString(removeShiftArray(testArray2)));
+        System.out.println("Original Array: " + Arrays.toString(testArray3) + " New Array: " + Arrays.toString(removeShiftArray(testArray3)));
     }
 
     public static int[] insertShiftArray (int[] originalArray, int inputValue){
@@ -31,5 +37,20 @@ public class ArrayShift{
             }
         }
         return newArray;
+    }
+
+    public static int[] removeShiftArray (int[] originalArray){
+        int[] middlelessArray = new int[originalArray.length - 1];
+        int midpointIndex = (originalArray.length % 2 == 0 ? originalArray.length / 2 : (originalArray.length + 1) / 2);
+
+        for (int i = 0; i < middlelessArray.length; i++){
+            if (i < midpointIndex) {
+                middlelessArray[i] = originalArray[i];
+            }
+            else {
+                middlelessArray[i] = originalArray[i + 1];
+            }
+        }
+        return middlelessArray;
     }
 }
