@@ -1,21 +1,25 @@
-import java.util.Arrays;
 
 public class ArrayReverse {
-
     public static void main(String[] args) {
 
-        int[] numbers = {1, 2, 3, 4, 5, 6};
-        reverseArray(numbers);
-    }
+        int[] oldList = {1, 2, 3, 4, 5, 6};
+        oldList = reverseArray(oldList);
 
-    public static void reverseArray(int[]inputArray){
-        for(int i = 0; i < inputArray.length/2; i++){
-            int temporaryNumber = inputArray[i];
-            inputArray[i] = inputArray[inputArray.length -1 -i];
-            inputArray[inputArray.length - 1 - i] = temporaryNumber;
-
+        for(int i = 0; i < oldList.length; i++) {
+            System.out.print(oldList[i] + " ");
         }
-        System.out.println(Arrays.toString(inputArray));
+
+
+
     }
 
+    public static int[] reverseArray( int[] arrayToReverse){
+        int[] reversedArray = new int[arrayToReverse.length];
+
+        for(int i = 0; i < arrayToReverse.length; i++) {
+            reversedArray[i] = arrayToReverse[arrayToReverse.length - 1 - i];
+        }
+
+        return reversedArray;
+    }
 }
