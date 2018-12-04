@@ -68,46 +68,47 @@ public class LinkedList{
         return array;
     }
 
-    public void append(int value){
-        Node currentNode = this.head;
-        while(currentNode != null){
-            currentNode = currentNode.next;
-        }
-        currentNode.next = new Node(value, null);
+//    public void append(int value){
+//        Node currentNode = this.head;
+//        while(currentNode != null){
+//            currentNode = currentNode.next;
+//        }
+//        currentNode.next = new Node(value, null);
+//
+//    }
 
-    }
-
-    public void insertBefore(int value, int newValue) {
-        if (this.head.data == value) {
-            this.insert(newValue);
-            return;
-
-        Node currentNode = this.head;
-        while (currentNode != null) {
-            if (currentNode.next.data == value) {
-                Node newNode = new Node(newValue, currentNode);
-                currentNode = newNode;
-            }
-            currentNode = currentNode.next;
-        }
-    }
-
-    public void insertAfter(int value, int newValue) {
-            if (this.head.data == value) {
-                this.insert(newValue);
-                return;
-
-                Node currentNode = this.head;
-                while (currentNode != null) {
-                    if (currentNode.next.data == value) {
-                        Node newNode = new Node(newValue, currentNode.next);
-                        currentNode = newNode;
-                    }
-                    currentNode = currentNode.next;
-                }
-
-
-            }
-        }
-    }
+//    public void insertBefore(int value, int newValue) {
+//        if (this.head.data == value) {
+//            this.insert(newValue);
+//            return;
+//
+//            Node currentNode = this.head;
+//            while (currentNode != null) {
+//                if (currentNode.next.data == value) {
+//                    Node newNode = new Node(newValue, currentNode);
+//                    currentNode = newNode;
+//                }
+//                currentNode = currentNode.next;
+//            }
+//        }
+//    }
+//
+//    public void insertAfter(int value, int newValue) {
+//            if (this.head.data == value) {
+//                this.insert(newValue);
+//                return;
+//
+//                Node currentNode = this.head;
+//                while (currentNode != null) {
+//                    if (currentNode.next.data == value) {
+//                        Node newNode = new Node(newValue, currentNode.next);
+//                        currentNode = newNode;
+//                    }
+//                    currentNode = currentNode.next;
+//                }
+//
+//
+//            }
+//        }
+//
 }

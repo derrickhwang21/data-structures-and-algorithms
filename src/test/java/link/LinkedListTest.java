@@ -1,5 +1,6 @@
 package link;
 
+import org.junit.Rule;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -38,10 +39,11 @@ public class LinkedListTest {
     @Test
     public void testInsert3() {
         LinkedList testList = new LinkedList();
-
         testList.insert(1);
         testList.insert(2);
         testList.insert(3);
+
+
 
 
         assertEquals("output should equal to 1", 1, testList.head.next.next.data);
@@ -58,6 +60,24 @@ public class LinkedListTest {
         assertTrue( testList.includes(1));
         assertTrue( testList.includes(20));
         assertTrue( testList.includes(300));
+    }
+
+
+    @Test
+    public void testPrint(){
+        LinkedList testList = new LinkedList();
+        LinkedList testList2 = new LinkedList();
+        LinkedList testList3 = new LinkedList();
+        testList.insert(1);
+        testList.insert(20);
+        testList.insert(300);
+
+        }
+
+        assertThat(testList2.);
+
+
+
     }
 
 }
