@@ -1,78 +1,73 @@
 package link;
 
+import sun.awt.image.ImageWatched;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
 
-public class LinkedList<AnyType> {
+import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
-    public static void main(String[] args){
-        LinkedList<String> list = new LinkedList<String>();
-        list.addFirst("p");
-        list.addFirst("a");
-        list.addFirst("e");
-        list.addFirst("h");
-        System.out.println(list.print());
-    }
+public class LinkedList{
 
-    private Node head;
+    public Node head;
 
 
 
-    public void addFirst(Object data){
-        head = new Node(data, head);
+    public void insert(int data){
+        Node newNode = new Node(data, this.head);
+        newNode.next = this.head;
+        this.head = newNode;
     }
 
 
-    public void insert (Node key, Object toInsert){
-        // takes any values as an argument and
-        // adds a new node with that value to the head
-        if (head == null){
+
+    /**
+     * takes any value as an argument and returns a boolean
+     * depending on whether that value exists as a node's value
+     */
+    public boolean includes(int findValue){
+        Node currentNode = head;
+
+        while( currentNode != null){
+            if (currentNode.data == findValue){
+                return true;
+            }
+            currentNode = currentNode.next;
 
         }
-        if(head.data.equals(key)){
-            addFirst(toInsert);
-        }
-
-        Node previous = null;
-        Node current = head;
-
-        while(current != null && !current.data.equals(key)){
-            previous = current;
-            current = current.next;
-        }
-        if(current != null){
-            previous.next = new Node(toInsert, current);
-
-        }
-
+        return false;
 
 
     }
 
-//    public Node includes{
-        /**
-         * takes any value as an argument and returns a boolean
-         * depending on whether that value exists as a node's value
-         */
+    /**
+     * takes in no arguments and out puts all of the current nodevalues in the linked list
+     */
+    public void print(){
 
-
-//    }
-
-
-    public String print(){
-        /**
-         * takes in no arguments and out puts all of the current nodevalues in the linked list
-         */
-        Node nextNode;
-        nextNode = head;
-        String result = head.data + " ";
-        if (head.next != null){
-
-            result += head.next.toString();
+        Node currentNode = this.head;
+        while (currentNode != null){
+            System.out.print(currentNode.data + " ");
+            currentNode = currentNode.next;
         }
-        return result;
-
 
     }
+
+    public ArrayList toIntegerArray(){
+
+
+        ArrayList<Integer> array = new ArrayList<>();
+        Node currentNode = this.head;
+        while(currentNode != null){
+            array.add(currentNode.data);
+            currentNode = currentNode.next;
+        }
+        System.out.println(array);
+        return array;
+    }
+
 
 
 
