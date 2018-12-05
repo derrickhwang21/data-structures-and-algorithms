@@ -109,6 +109,7 @@ public class LinkedListTest {
     @Test
     public void includes1() {
         LinkedList testList = new LinkedList();
+
         testList.insert(1);
         testList.insert(20);
         testList.insert(300);
@@ -116,6 +117,32 @@ public class LinkedListTest {
         assertTrue( testList.includes(1));
         assertTrue( testList.includes(20));
         assertTrue( testList.includes(300));
+    }
+
+    @Test
+    public void includes2() {
+        LinkedList testList = new LinkedList();
+
+        testList.insert(1);
+        testList.insert(20);
+        testList.insert(300);
+
+        assertFalse( testList.includes(12));
+        assertFalse( testList.includes(202));
+        assertFalse( testList.includes(3003));
+    }
+
+    @Test
+    public void includes3() {
+        LinkedList testList = new LinkedList();
+
+        testList.insert(1);
+        testList.insert(20);
+        testList.insert(-10);
+
+        assertTrue( testList.includes(1));
+        assertTrue( testList.includes(20));
+        assertTrue( testList.includes(-10));
     }
 
 
