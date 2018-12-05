@@ -8,7 +8,9 @@ Collection of daily code challenges for Codefellows 401 - Java
 
 11/28 - [Binary search in a sorted 1D array](assets/challenge_readmes/BinarySearch.md)
 
-12/2 - [Linked List]
+12/4 - [Linked List](assets/challenge_readmes/LinkedList.md)
+
+12/5 - [Linked List Insertions](assets/challenge_readmes/LinkedListInsertion.md)
 
 
 
