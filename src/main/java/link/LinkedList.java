@@ -17,7 +17,7 @@ public class LinkedList{
 
     public void insert(int data){
         Node newNode = new Node(data, this.head);
-        newNode.next = this.head;
+//        newNode.next = this.head;
         this.head = newNode;
     }
 
@@ -68,21 +68,25 @@ public class LinkedList{
         return array;
     }
 
-//    public void append(int value){
-//        Node currentNode = this.head;
-//        while(currentNode != null){
-//            currentNode = currentNode.next;
-//        }
-//        currentNode.next = new Node(value, null);
-//
-//    }
+    public void append(int value) {
+        Node currentNode = this.head;
+        while (currentNode != null) {
+            if (currentNode.next == null) {
+                currentNode.next = new Node(value, null);
+                break;
+
+            }
+            currentNode = currentNode.next;
+        }
+    }
 
 //    public void insertBefore(int value, int newValue) {
+//        Node currentNode = this.head;
 //        if (this.head.data == value) {
 //            this.insert(newValue);
 //            return;
 //
-//            Node currentNode = this.head;
+//
 //            while (currentNode != null) {
 //                if (currentNode.next.data == value) {
 //                    Node newNode = new Node(newValue, currentNode);
@@ -92,8 +96,8 @@ public class LinkedList{
 //            }
 //        }
 //    }
-//
-//    public void insertAfter(int value, int newValue) {
+
+//        public void insertAfter(int value, int newValue) {
 //            if (this.head.data == value) {
 //                this.insert(newValue);
 //                return;
@@ -110,5 +114,5 @@ public class LinkedList{
 //
 //            }
 //        }
-//
+
 }
