@@ -1,24 +1,80 @@
 package link;
-
-import org.junit.Rule;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
-
 import static org.junit.Assert.*;
 
 
 
 public class LinkedListTest {
 
+    @Test
+    public void printTest(){
+        LinkedList testList = new LinkedList();
+
+        testList.insert(1);
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("1 ", actualOutput);
+
+    }
+
+    @Test
+    public void printTest2(){
+
+        LinkedList testList2 = new LinkedList();
+
+        testList2.insert(1);
+        testList2.insert(2);
+        testList2.insert(3);
+        testList2.insert(4);
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+        testList2.print();
+        String actualOutput = outString.toString();
+
+
+        assertEquals("4 3 2 1 ", actualOutput);
+
+    }
+
+    @Test
+    public void printTest3(){
+
+        LinkedList testList3 = new LinkedList();
+
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+        testList3.print();
+        String actualOutput = outString.toString();
+
+        assertTrue(actualOutput.isEmpty());
+
+
+    }
+
+
+
 
     @Test
     public void testInsert() {
-        LinkedList testList = new LinkedList();
-        testList.insert(1);
+        LinkedList testListInsert = new LinkedList();
+        testListInsert.insert(1);
 
 
-        assertEquals("output should equal to 1", 1, testList.head.data);
+        assertEquals("output should equal to 1", 1, testListInsert.head.data);
     }
 
     @Test
@@ -63,21 +119,6 @@ public class LinkedListTest {
     }
 
 
-    @Test
-    public void testPrint(){
-        LinkedList testList = new LinkedList();
-        LinkedList testList2 = new LinkedList();
-        LinkedList testList3 = new LinkedList();
-        testList.insert(1);
-        testList.insert(20);
-        testList.insert(300);
 
-        }
-
-        assertThat(testList2.);
-
-
-
-    }
 
 }
