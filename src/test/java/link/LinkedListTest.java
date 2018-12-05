@@ -1,19 +1,25 @@
 package link;
+import org.hamcrest.core.IsNull;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.*;
 
 
 
 public class LinkedListTest {
 
+    LinkedList testList = new LinkedList();
+
     @Test
     public void printTest(){
-        LinkedList testList = new LinkedList();
+
 
         testList.insert(1);
 
@@ -30,17 +36,17 @@ public class LinkedListTest {
     @Test
     public void printTest2(){
 
-        LinkedList testList2 = new LinkedList();
 
-        testList2.insert(1);
-        testList2.insert(2);
-        testList2.insert(3);
-        testList2.insert(4);
+
+        testList.insert(1);
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(4);
 
         OutputStream outString = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outString));
 
-        testList2.print();
+        testList.print();
         String actualOutput = outString.toString();
 
 
@@ -51,50 +57,48 @@ public class LinkedListTest {
     @Test
     public void printTest3(){
 
-        LinkedList testList3 = new LinkedList();
+
 
 
         OutputStream outString = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outString));
 
-        testList3.print();
+        testList.print();
         String actualOutput = outString.toString();
 
         assertTrue(actualOutput.isEmpty());
 
-
     }
-
 
 
 
     @Test
     public void testInsert() {
-        LinkedList testListInsert = new LinkedList();
-        testListInsert.insert(1);
+
+        testList.insert(1);
 
 
-        assertEquals("output should equal to 1", 1, testListInsert.head.data);
+        assertEquals("output should equal to 1", 1, testList.head.data);
     }
 
     @Test
     public void testInsert2() {
-        LinkedList testLList = new LinkedList();
-        testLList.insert(4);
-        testLList.insert(2);
+
+        testList.insert(4);
+        testList.insert(2);
 
 
         ArrayList<Integer> testAList = new ArrayList<>();
         testAList.add(2);
         testAList.add(4);
 
-        assertEquals("output should equal to 1", testAList , testLList.toIntegerArray());
+        assertEquals("output should equal to 1", testAList , testList.toIntegerArray());
 
     }
 
     @Test
     public void testInsert3() {
-        LinkedList testList = new LinkedList();
+
         testList.insert(1);
         testList.insert(2);
         testList.insert(3);
@@ -108,7 +112,8 @@ public class LinkedListTest {
 
     @Test
     public void includes1() {
-        LinkedList testList = new LinkedList();
+
+
         testList.insert(1);
         testList.insert(20);
         testList.insert(300);
@@ -118,6 +123,182 @@ public class LinkedListTest {
         assertTrue( testList.includes(300));
     }
 
+    @Test
+    public void includes2() {
+
+
+        testList.insert(1);
+        testList.insert(20);
+        testList.insert(300);
+
+        assertFalse( testList.includes(12));
+        assertFalse( testList.includes(202));
+        assertFalse( testList.includes(3003));
+    }
+
+    @Test
+    public void includes3() {
+
+
+        testList.insert(1);
+        testList.insert(20);
+        testList.insert(-10);
+
+        assertTrue( testList.includes(1));
+        assertTrue( testList.includes(20));
+        assertTrue( testList.includes(-10));
+    }
+
+
+    @Test
+    public void testAppend1(){
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.append(2);
+
+        assertEquals("value should be 2", 2, testList.head.next.next.next.data);
+
+
+    }
+
+    @Test
+    public void testAppend2(){
+        testList.insert(-1);
+        testList.insert(-13);
+        testList.insert(-4);
+        testList.append(2);
+
+        assertEquals("value should be 2", 2, testList.head.next.next.next.data);
+
+
+    }
+
+    @Test
+    public void testAppend3(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        testList.append(2);
+
+        assertTrue(actualOutput.isEmpty());
+
+    }
+
+    @Test
+    public void testInsertBefore(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insertBefore(3, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("value should be the same", "4 3 4 1 ", actualOutput);
+    }
+
+    @Test
+    public void testInsertBefore2(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insertBefore(7, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("value should be the same", "4 3 1 ", actualOutput);
+    }
+
+    @Test
+    public void testInsertBefore3(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+
+        testList.insertBefore(3, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertTrue(actualOutput.isEmpty());
+    }
+
+    @Test
+    public void testInsertAfter(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insertAfter(3, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("value should be the same", "4 4 3 1 ", actualOutput);
+    }
+
+    @Test
+    public void testInsertAfter2(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insertAfter(35, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("value should be the same", "4 3 1 ", actualOutput);
+    }
+
+
+    @Test
+    public void testInsertAfter3(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+
+        testList.insertAfter(3, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertTrue(actualOutput.isEmpty());
+    }
 
 
 

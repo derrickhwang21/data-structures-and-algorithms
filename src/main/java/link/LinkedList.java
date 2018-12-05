@@ -1,13 +1,7 @@
 package link;
 
-import sun.awt.image.ImageWatched;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-
-import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
 public class LinkedList{
 
@@ -17,7 +11,7 @@ public class LinkedList{
 
     public void insert(int data){
         Node newNode = new Node(data, this.head);
-        newNode.next = this.head;
+//        newNode.next = this.head;
         this.head = newNode;
     }
 
@@ -68,47 +62,55 @@ public class LinkedList{
         return array;
     }
 
-//    public void append(int value){
-//        Node currentNode = this.head;
-//        while(currentNode != null){
-//            currentNode = currentNode.next;
-//        }
-//        currentNode.next = new Node(value, null);
-//
-//    }
+    public void append(int value) {
+        Node currentNode = this.head;
+        while (currentNode != null) {
+            if (currentNode.next == null) {
+                currentNode.next = new Node(value, null);
+                break;
 
-//    public void insertBefore(int value, int newValue) {
-//        if (this.head.data == value) {
-//            this.insert(newValue);
-//            return;
-//
-//            Node currentNode = this.head;
-//            while (currentNode != null) {
-//                if (currentNode.next.data == value) {
-//                    Node newNode = new Node(newValue, currentNode);
-//                    currentNode = newNode;
-//                }
-//                currentNode = currentNode.next;
-//            }
-//        }
-//    }
-//
-//    public void insertAfter(int value, int newValue) {
-//            if (this.head.data == value) {
-//                this.insert(newValue);
-//                return;
-//
-//                Node currentNode = this.head;
-//                while (currentNode != null) {
-//                    if (currentNode.next.data == value) {
-//                        Node newNode = new Node(newValue, currentNode.next);
-//                        currentNode = newNode;
-//                    }
-//                    currentNode = currentNode.next;
-//                }
-//
-//
-//            }
-//        }
-//
+            }
+            currentNode = currentNode.next;
+        }
+    }
+
+    public void insertBefore(int value, int newValue) {
+        if(!includes(value)){
+            return;
+        }
+
+        Node currentNode = this.head;
+        if (this.head.data == value) {
+            this.insert(newValue);
+            return;
+        }
+            while (currentNode != null) {
+                if (currentNode.data == value) {
+                     currentNode.next = new Node(newValue, currentNode.next);
+                     break;
+
+                }
+                currentNode = currentNode.next;
+            }
+
+    }
+
+    public void insertAfter(int value, int newValue) {
+        if(!includes(value)){
+            return;
+        }
+
+        Node currentNode = this.head;
+
+
+        while (currentNode != null) {
+            if (currentNode.next.data == value) {
+                currentNode.next = new Node(newValue, currentNode.next);
+                break;
+
+            }
+            currentNode = currentNode.next;
+        }
+
+    }
 }
