@@ -80,22 +80,26 @@ public class LinkedList{
         }
     }
 
-//    public void insertBefore(int value, int newValue) {
-//        Node currentNode = this.head;
-//        if (this.head.data == value) {
-//            this.insert(newValue);
-//            return;
-//
-//
-//            while (currentNode != null) {
-//                if (currentNode.next.data == value) {
-//                    Node newNode = new Node(newValue, currentNode);
-//                    currentNode = newNode;
-//                }
-//                currentNode = currentNode.next;
-//            }
-//        }
-//    }
+    public void insertBefore(int value, int newValue) {
+        if(!includes(value)){
+            return;
+        }
+
+        Node currentNode = this.head;
+        if (this.head.data == value) {
+            this.insert(newValue);
+            return;
+        }
+            while (currentNode != null) {
+                if (currentNode.data == value) {
+                     currentNode.next = new Node(newValue, currentNode.next);
+                     break;
+
+                }
+                currentNode = currentNode.next;
+            }
+
+    }
 
 //        public void insertAfter(int value, int newValue) {
 //            if (this.head.data == value) {

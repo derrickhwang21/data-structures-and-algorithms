@@ -189,5 +189,60 @@ public class LinkedListTest {
 
     }
 
+    @Test
+    public void testInsertBefore(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insertBefore(3, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("value should be the same", "4 3 4 1 ", actualOutput);
+    }
+
+    @Test
+    public void testInsertBefore2(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+        testList.insert(1);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insertBefore(7, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertEquals("value should be the same", "4 3 1 ", actualOutput);
+    }
+
+    @Test
+    public void testInsertBefore3(){
+
+        OutputStream outString = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outString));
+
+
+
+ 
+        testList.insertBefore(3, 4);
+
+        testList.print();
+        String actualOutput = outString.toString();
+
+        assertTrue(actualOutput.isEmpty());
+    }
+
 
 }
