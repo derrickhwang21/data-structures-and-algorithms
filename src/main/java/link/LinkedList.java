@@ -1,13 +1,7 @@
 package link;
 
-import sun.awt.image.ImageWatched;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-
-import static jdk.nashorn.internal.objects.ArrayBufferView.length;
 
 public class LinkedList{
 
