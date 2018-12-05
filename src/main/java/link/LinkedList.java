@@ -101,22 +101,22 @@ public class LinkedList{
 
     }
 
-//        public void insertAfter(int value, int newValue) {
-//            if (this.head.data == value) {
-//                this.insert(newValue);
-//                return;
-//
-//                Node currentNode = this.head;
-//                while (currentNode != null) {
-//                    if (currentNode.next.data == value) {
-//                        Node newNode = new Node(newValue, currentNode.next);
-//                        currentNode = newNode;
-//                    }
-//                    currentNode = currentNode.next;
-//                }
-//
-//
-//            }
-//        }
+    public void insertAfter(int value, int newValue) {
+        if(!includes(value)){
+            return;
+        }
 
+        Node currentNode = this.head;
+
+
+        while (currentNode != null) {
+            if (currentNode.next.data == value) {
+                currentNode.next = new Node(newValue, currentNode.next);
+                break;
+
+            }
+            currentNode = currentNode.next;
+        }
+
+    }
 }

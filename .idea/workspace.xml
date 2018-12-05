@@ -25,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/link/LinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="90" column="19" lean-forward="true" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+            <state relative-caret-position="140">
+              <caret line="103" column="54" lean-forward="true" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/link/LinkedListTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="228" lean-forward="true" selection-start-line="228" selection-end-line="228" />
+            <state relative-caret-position="242">
+              <caret line="257" column="29" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -188,7 +188,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543995854102" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543996457158" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -216,8 +216,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LinkedListTest.testInsertBefore3">
-    <configuration name="LinkedListTest.testAppend2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LinkedListTest">
+    <configuration name="LinkedListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="data-structures-and-algorithms.test" />
       <extension name="coverage">
         <pattern>
@@ -227,13 +227,11 @@
       </extension>
       <option name="PACKAGE_NAME" value="link" />
       <option name="MAIN_CLASS_NAME" value="link.LinkedListTest" />
-      <option name="METHOD_NAME" value="testAppend2" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LinkedListTest.testAppend3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LinkedListTest.testInsertAfter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="data-structures-and-algorithms.test" />
       <extension name="coverage">
         <pattern>
@@ -243,7 +241,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="link" />
       <option name="MAIN_CLASS_NAME" value="link.LinkedListTest" />
-      <option name="METHOD_NAME" value="testAppend3" />
+      <option name="METHOD_NAME" value="testInsertAfter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -299,11 +297,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LinkedListTest" />
+        <item itemvalue="JUnit.LinkedListTest.testInsertAfter" />
+        <item itemvalue="JUnit.LinkedListTest.testInsertBefore" />
         <item itemvalue="JUnit.LinkedListTest.testInsertBefore3" />
         <item itemvalue="JUnit.LinkedListTest.testInsertBefore2" />
-        <item itemvalue="JUnit.LinkedListTest.testInsertBefore" />
-        <item itemvalue="JUnit.LinkedListTest.testAppend3" />
-        <item itemvalue="JUnit.LinkedListTest.testAppend2" />
       </list>
     </recent_temporary>
   </component>
@@ -321,27 +319,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 34m 24s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 36m 12s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 37m 31s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 37m 55s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 38m 30s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 38m 57s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 39m 12s.xml">
-      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 40m 06s.xml">
       <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
     </history-entry>
@@ -350,6 +327,27 @@
     </history-entry>
     <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 42m 18s.xml">
       <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertBefore2 - 2018.12.04 at 23h 43m 33s.xml">
+      <configuration name="LinkedListTest.testInsertBefore2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertBefore3 - 2018.12.04 at 23h 44m 11s.xml">
+      <configuration name="LinkedListTest.testInsertBefore3" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertAfter - 2018.12.04 at 23h 47m 13s.xml">
+      <configuration name="LinkedListTest.testInsertAfter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertBefore - 2018.12.04 at 23h 47m 37s.xml">
+      <configuration name="LinkedListTest.testInsertBefore" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertAfter - 2018.12.04 at 23h 49m 04s.xml">
+      <configuration name="LinkedListTest.testInsertAfter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertAfter - 2018.12.04 at 23h 50m 47s.xml">
+      <configuration name="LinkedListTest.testInsertAfter" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LinkedListTest_testInsertAfter - 2018.12.04 at 23h 51m 25s.xml">
+      <configuration name="LinkedListTest.testInsertAfter" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -524,8 +522,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/link/LinkedList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="90" column="19" lean-forward="true" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="19" />
+        <state relative-caret-position="140">
+          <caret line="103" column="54" lean-forward="true" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -534,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/link/LinkedListTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="228" lean-forward="true" selection-start-line="228" selection-end-line="228" />
+        <state relative-caret-position="242">
+          <caret line="257" column="29" selection-start-line="257" selection-start-column="29" selection-end-line="257" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
