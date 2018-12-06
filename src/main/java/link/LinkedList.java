@@ -112,6 +112,8 @@ public class LinkedList {
 
     }
 
+
+
     public int kthFromEnd(int k) {
 
         Node lead = this.head;
@@ -143,5 +145,7 @@ public class LinkedList {
 
         return trail.data;
     }
+
+    
 
 }
