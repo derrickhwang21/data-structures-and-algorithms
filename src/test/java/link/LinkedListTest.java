@@ -353,6 +353,22 @@ public class LinkedListTest {
         assertEquals(7, result);
     }
 
+    @Test
+    public void testMerge() {
+
+        LinkedList testList1 = new LinkedList();
+        testList1.insert(1);
+        testList1.insert(3);
+        testList1.insert(2);
+
+        LinkedList testList2 = new LinkedList();
+        testList2.insert(5);
+        testList2.insert(9);
+        testList2.insert(4);
 
 
+        System.out.println(LinkedList.merge(testList1, testList2));
+    }
 }
+
+

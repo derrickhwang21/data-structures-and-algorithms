@@ -3,6 +3,8 @@ package link;
 
 import java.util.ArrayList;
 
+import static jdk.nashorn.internal.objects.ArrayBufferView.length;
+
 public class LinkedList {
 
     public Node head;
@@ -119,33 +121,64 @@ public class LinkedList {
         Node lead = this.head;
         Node trail = this.head;
 
-//            while (trail != null && k == 0) {
-//                if(trail.next != null){
-//
-//                }else{
-//                    trail.data;
-//            }
-//
 
-
-        for (int i = 0; i < k; i++) {
-
-            if (head.next != null) {
-                lead = lead.next;
-
-            } else {
-                throw new IndexOutOfBoundsException("value entered is out of range");
-            }
-        }
-            while (lead.next != null) {
-                lead = lead.next;
-                trail = trail.next;
-
+            while(lead != null) {
+                trail = lead;
+            for(int i = 0; i< k; i++){
+            if(trail.next == null &&  i != k - 1){
+                return -1;
             }
 
-        return trail.data;
+                trail = trail.next; }
+
+                if (trail.next == null) {
+                    return lead.data;
+                }
+                lead = lead.next;
+            }
+        return -1;
     }
 
-    
+    /**
+     *
+     * Code Challenge: 08
+     * Merge Two Linked Lists
+     *
+     */
 
+    public static LinkedList merge(LinkedList one, LinkedList two){
+
+        Node current1 = one.head;
+        Node current2 = two.head;
+
+        Node placeHead1 = current1.next;
+        Node placeHead2 = current2.next;
+
+        if(one.head == null) {
+            return two;
+        }
+        if(two.head == null) {
+            return one;
+        }
+
+        while ( placeHead1.next != null && placeHead2.next != null){
+            placeHead1 = current1;
+            placeHead2 = current2;
+
+            current1.next = placeHead2.next;
+            current2.next = placeHead1.next;
+
+            placeHead1 = current1;
+            placeHead2 = current2;
+        }
+
+        if (current1.next == null){
+            current1.next = current2;
+        }
+        else if (current2 == null){
+            current1.next = current2;
+            current2.next = placeHead1;
+        }
+        return one;
+    }
 }

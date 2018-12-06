@@ -24,3 +24,6 @@ Define a method called "print" which takes in no arguments and outputs all of th
 ## API
 
 Java ai API was used to support for system input and output through data streams.
+
+<!-- Embedded whiteboard image -->
+![ll_merge](../ll_merge.jpg)
