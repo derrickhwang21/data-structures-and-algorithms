@@ -300,6 +300,75 @@ public class LinkedListTest {
         assertTrue(actualOutput.isEmpty());
     }
 
+    @Test
+    public void testkthFromEnd(){
+
+        testList.insert(1);
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insert(5);
+        testList.insert(6);
+        testList.insert(7);
+        testList.insert(8);
+        testList.insert(9);
+        int result = testList.kthFromEnd(4);
+
+        assertEquals(5, result);
+    }
+
+    @Test
+    public void testkthFromEnd2(){
+
+        testList.insert(1);
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insert(5);
+        testList.insert(6);
+        testList.insert(7);
+        testList.insert(8);
+        testList.insert(9);
+        int result = testList.kthFromEnd(0);
+        System.out.print(result);
+        assertEquals(9, result);
+
+    }
 
 
+    @Test
+    public void testkthFromEnd3(){
+
+        testList.insert(1);
+        testList.insert(2);
+        testList.insert(3);
+        testList.insert(4);
+        testList.insert(5);
+        testList.insert(6);
+        testList.insert(7);
+        testList.insert(8);
+        testList.insert(9);
+        int result = testList.kthFromEnd(2);
+
+        assertEquals(7, result);
+    }
+
+    @Test
+    public void testMerge() {
+
+        LinkedList testList1 = new LinkedList();
+        testList1.insert(1);
+        testList1.insert(3);
+        testList1.insert(2);
+
+        LinkedList testList2 = new LinkedList();
+        testList2.insert(5);
+        testList2.insert(9);
+        testList2.insert(4);
+
+
+        System.out.println(LinkedList.merge(testList1, testList2));
+    }
 }
+
+
