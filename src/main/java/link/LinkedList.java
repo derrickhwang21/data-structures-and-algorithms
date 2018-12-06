@@ -148,36 +148,36 @@ public class LinkedList {
 
     public static LinkedList merge(LinkedList one, LinkedList two){
 
-        Node current1 = one.head;
-        Node current2 = two.head;
 
-        Node placeHead1 = current1.next;
-        Node placeHead2 = current2.next;
+
 
         if(one.head == null) {
-            return two;
+            return two.head;
         }
         if(two.head == null) {
-            return one;
+            return one.head;
         }
+        Node current1 = one.head;
+        Node placeHead1 = current1.next;
 
-        while ( placeHead1.next != null && placeHead2.next != null){
+        Node current2 = two.head;
+        Node placeHead2 = current2.next;
+
+        while ( current1 != null){
             placeHead1 = current1;
             placeHead2 = current2;
 
             current1.next = placeHead2.next;
             current2.next = placeHead1.next;
 
-            placeHead1 = current1;
-            placeHead2 = current2;
+
         }
 
         if (current1.next == null){
             current1.next = current2;
         }
-        else if (current2 == null){
+        else if (current2 != null){
             current1.next = current2;
-            current2.next = placeHead1;
         }
         return one;
     }

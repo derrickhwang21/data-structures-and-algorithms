@@ -12,5 +12,7 @@ Collection of daily code challenges for Codefellows 401 - Java
 
 12/5 - [Linked List Insertions](assets/challenge_readmes/LinkedListInsertion.md)
 
+12/6 - [Linked List Merge](assets/challenge_readmes/ll_merge.md)
+
 
 
