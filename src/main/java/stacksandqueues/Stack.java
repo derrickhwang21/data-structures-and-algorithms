@@ -1,7 +1,7 @@
 package stacksandqueues;
 
 
-import java.util.Iterator;
+
 
 import java.util.NoSuchElementException;
 
@@ -87,49 +87,6 @@ public class Stack<T> {
         return top.value;
     }
 
-    /**
-     * Returns a string representation of this stack
-     *
-     * @return
-     */
-//    public String toString(){
-//        StringBuilder s = new StringBuilder();
-//        for (Object value : this){
-//            s.append(value);
-//            s.append(' ');
-//        }
-//        return s.toString();
-//    }
-//
-//
-//    public Iterator<Object> iterator(){ return new ListIterator(); }
-//
-//    private class ListIterator implements Iterator<Object> {
-//        private Node current = head;
-//        public boolean hasNext(){
-//            return current != null;
-//        }
-//        public void remove(){ throw new UnsupportedOperationException(); }
-//
-//        public Object next(){
-//            if (!hasNext()) throw new NoSuchElementException();
-//            Object item = current.value;
-//            current = current.next;
-//            return item;
-//        }
-//    }
-//
-//
-//
-    private static void printArray(Integer[] anArray) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < anArray.length; i++) {
-            if (i > 0) {
-                sb.append(", ");
-            }
-            sb.append(anArray[i]);
-        }
-        System.out.println(sb.toString());
-    }
+
 
 }
