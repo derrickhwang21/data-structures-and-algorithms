@@ -114,29 +114,29 @@ public class LinkedList {
 
     }
 
-
+    /**
+     *
+     * Code Challenge - 07: kth_from_the_end
+     *
+     */
 
     public int kthFromEnd(int k) {
 
-        Node lead = this.head;
-        Node trail = this.head;
-
-
-            while(lead != null) {
-                trail = lead;
-            for(int i = 0; i< k; i++){
-            if(trail.next == null &&  i != k - 1){
-                return -1;
-            }
-
-                trail = trail.next; }
-
-                if (trail.next == null) {
-                    return lead.data;
-                }
-                lead = lead.next;
-            }
-        return -1;
+        if (head == null) {
+            return 0;
+        }
+        Node lead = head;
+        while (k >= 0) {
+            lead = lead.next;
+            k--;
+        }
+        Node tail = head;
+        while (lead != null) {
+            lead = lead.next;
+            tail = tail.next;
+        }
+        int i = tail.data;
+        return i;
     }
 
     /**
@@ -146,39 +146,40 @@ public class LinkedList {
      *
      */
 
-    public static LinkedList merge(LinkedList one, LinkedList two){
+//    public static LinkedList merge(LinkedList one, LinkedList two){
+//
+//
+//
+//
+//        if(one.head == null) {
+//            return two.head;
+//        }
+//        if(two.head == null) {
+//            return one.head;
+//        }
+//        Node current1 = one.head;
+//        Node placeHead1 = current1.next;
+//
+//        Node current2 = two.head;
+//        Node placeHead2 = current2.next;
+//
+//        while ( current1 != null){
+//            placeHead1 = current1;
+//            placeHead2 = current2;
+//
+//            current1.next = placeHead2.next;
+//            current2.next = placeHead1.next;
+//
+//
+//        }
+//
+//        if (current1.next == null){
+//            current1.next = current2;
+//        }
+//        else if (current2 != null){
+//            current1.next = current2;
+//        }
+//        return one;
+//    }
 
-
-
-
-        if(one.head == null) {
-            return two.head;
-        }
-        if(two.head == null) {
-            return one.head;
-        }
-        Node current1 = one.head;
-        Node placeHead1 = current1.next;
-
-        Node current2 = two.head;
-        Node placeHead2 = current2.next;
-
-        while ( current1 != null){
-            placeHead1 = current1;
-            placeHead2 = current2;
-
-            current1.next = placeHead2.next;
-            current2.next = placeHead1.next;
-
-
-        }
-
-        if (current1.next == null){
-            current1.next = current2;
-        }
-        else if (current2 != null){
-            current1.next = current2;
-        }
-        return one;
-    }
 }
