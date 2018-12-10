@@ -2,17 +2,19 @@
 Collection of daily code challenges for Codefellows 401 - Java
 
 ## Challenge
-11/26 - [Reverse an Array](assets/challenge_readmes/ArrayReverse.md)
+Code Challenge 01 - [Reverse an Array](assets/challenge_readmes/ArrayReverse.md)
 
-11/27 - [Insert and shift an array in middle at index](assets/challenge_readmes/ArrayShift.md)
+Code Challenge 02 - [Insert and shift an array in middle at index](assets/challenge_readmes/ArrayShift.md)
 
-11/28 - [Binary search in a sorted 1D array](assets/challenge_readmes/BinarySearch.md)
+Code Challenge 03 - [Binary search in a sorted 1D array](assets/challenge_readmes/BinarySearch.md)
 
-12/4 - [Linked List](assets/challenge_readmes/LinkedList.md)
+Code Challenge 04 - [Linked List](assets/challenge_readmes/LinkedList.md)
 
-12/5 - [Linked List Insertions](assets/challenge_readmes/LinkedListInsertion.md)
+Code Challenge 05 - [Linked List Insertions](assets/challenge_readmes/LinkedListInsertion.md)
 
-12/6 - [Linked List Merge](assets/challenge_readmes/ll_merge.md)
+Code Challenge 06 - [Linked List Merge](assets/challenge_readmes/ll_merge.md)
+
+Code Challenge 07 - [Linked List Kth From End](assets/challenge_readmes/ll_kth_from_end.md)
 
 
 
