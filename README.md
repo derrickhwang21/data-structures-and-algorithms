@@ -16,5 +16,7 @@ Code Challenge 06 - [Linked List Merge](assets/challenge_readmes/ll_merge.md)
 
 Code Challenge 07 - [Linked List Kth From End](assets/challenge_readmes/ll_kth_from_end.md)
 
+Code Challenge 08 - [Merged List](assets/challenge_readmes/ll_merged.md)
+
 
 
