@@ -1,14 +1,10 @@
 package link;
-import org.hamcrest.core.IsNull;
 import org.junit.Test;
-
 import java.io.ByteArrayOutputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.*;
 
 
@@ -355,22 +351,88 @@ public class LinkedListTest {
         assertEquals(7, result);
     }
 
-//    @Test
-//    public void testMerge() {
-//
-//        LinkedList testList1 = new LinkedList();
-//        testList1.insert(1);
-//        testList1.insert(3);
-//        testList1.insert(2);
-//
-//        LinkedList testList2 = new LinkedList();
-//        testList2.insert(5);
-//        testList2.insert(9);
-//        testList2.insert(4);
-//
-//
-//        System.out.println(LinkedList.merge(testList1, testList2));
-//    }
+    @Test
+    public void testMergeEqualLength() {
+
+        LinkedList testList1 = new LinkedList();
+        testList1.insert(1);
+        testList1.insert(3);
+        testList1.insert(2);
+
+        LinkedList testList2 = new LinkedList();
+        testList2.insert(5);
+        testList2.insert(9);
+        testList2.insert(4);
+
+        ArrayList<Integer> testMergedList = new ArrayList<>();
+        testMergedList.add(2);
+        testMergedList.add(4);
+        testMergedList.add(3);
+        testMergedList.add(9);
+        testMergedList.add(1);
+        testMergedList.add(5);
+
+
+        ArrayList<Integer> mergedList = LinkedList.merge(testList1, testList2).toIntegerArray();
+        assertEquals(testMergedList, mergedList);
+
+    }
+
+    @Test
+    public void testMergeShortTwo() {
+
+        LinkedList testList1 = new LinkedList();
+        testList1.insert(1);
+        testList1.insert(3);
+        testList1.insert(2);
+
+        LinkedList testList2 = new LinkedList();
+        testList2.insert(5);
+        testList2.insert(9);
+
+
+        ArrayList<Integer> testMergedList = new ArrayList<>();
+        testMergedList.add(2);
+        testMergedList.add(9);
+        testMergedList.add(3);
+        testMergedList.add(5);
+        testMergedList.add(1);
+
+
+        ArrayList<Integer> mergedList = LinkedList.merge(testList1, testList2).toIntegerArray();
+        assertEquals(testMergedList, mergedList);
+
+    }
+
+    @Test
+    public void testMergeShortOne() {
+
+        LinkedList testList1 = new LinkedList();
+        testList1.insert(1);
+        testList1.insert(3);
+
+
+        LinkedList testList2 = new LinkedList();
+        testList2.insert(5);
+        testList2.insert(9);
+        testList2.insert(4);
+
+
+
+
+        ArrayList<Integer> testMergedList = new ArrayList<>();
+        testMergedList.add(3);
+        testMergedList.add(4);
+        testMergedList.add(1);
+        testMergedList.add(9);
+        testMergedList.add(5);
+
+
+        ArrayList<Integer> mergedList = LinkedList.merge(testList1, testList2).toIntegerArray();
+
+        assertEquals(testMergedList, mergedList);
+
+    }
 }
 
 

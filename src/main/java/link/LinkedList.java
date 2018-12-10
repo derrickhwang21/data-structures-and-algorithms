@@ -3,7 +3,7 @@ package link;
 
 import java.util.ArrayList;
 
-import static jdk.nashorn.internal.objects.ArrayBufferView.length;
+
 
 public class LinkedList {
 
@@ -12,7 +12,6 @@ public class LinkedList {
 
     public void insert(int data) {
         Node newNode = new Node(data, this.head);
-//        newNode.next = this.head;
         this.head = newNode;
     }
 
@@ -115,9 +114,7 @@ public class LinkedList {
     }
 
     /**
-     *
      * Code Challenge - 07: kth_from_the_end
-     *
      */
 
     public int kthFromEnd(int k) {
@@ -140,46 +137,37 @@ public class LinkedList {
     }
 
     /**
-     *
      * Code Challenge: 08
      * Merge Two Linked Lists
-     *
      */
 
-//    public static LinkedList merge(LinkedList one, LinkedList two){
-//
-//
-//
-//
-//        if(one.head == null) {
-//            return two.head;
-//        }
-//        if(two.head == null) {
-//            return one.head;
-//        }
-//        Node current1 = one.head;
-//        Node placeHead1 = current1.next;
-//
-//        Node current2 = two.head;
-//        Node placeHead2 = current2.next;
-//
-//        while ( current1 != null){
-//            placeHead1 = current1;
-//            placeHead2 = current2;
-//
-//            current1.next = placeHead2.next;
-//            current2.next = placeHead1.next;
-//
-//
-//        }
-//
-//        if (current1.next == null){
-//            current1.next = current2;
-//        }
-//        else if (current2 != null){
-//            current1.next = current2;
-//        }
-//        return one;
-//    }
+    public static LinkedList merge(LinkedList one, LinkedList two) {
+
+        Node current = one.head;
+        Node placeHolder1 = current;
+        Node placeholder2 = two.head;
+
+        if (one.head == null) {
+            return two;
+
+        } else if (two.head == null) {
+            return one;
+
+        }
+
+        while (current != null && placeholder2 != null && placeHolder1 != null) {
+            placeHolder1 = current.next;
+            current.next = placeholder2;
+            current = current.next;
+            placeholder2 = current.next;
+
+            if (placeHolder1 != null) {
+                current.next = placeHolder1;
+                current = current.next;
+            }
+        }
+        return one;
+
+    }
 
 }
