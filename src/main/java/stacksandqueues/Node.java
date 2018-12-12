@@ -5,8 +5,10 @@ public class Node<T> {
      public Node<T> next;
 
 
-    public Node(T element){
-        value = element;
+    public Node(T element, Node next){
+
+        this.value = element;
+        this.next = next;
     }
 
 

@@ -1,5 +1,6 @@
 package stacksandqueues;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
@@ -8,107 +9,91 @@ import static org.junit.Assert.*;
 
 public class QueueTest {
 
-    Queue<Integer> testList = new Queue<>();
+    Queue testQueue;
 
-    @Test
-    public void testEnqueue() {
-
-        for (int i = 0; i < 10000; i++) {
-            Integer temp = (int) Math.random() * 100;
-            testList.enqueue(temp);
-            assertEquals(temp, testList.peek());
-
-        }
+    @Before
+    public void beforeTestSetUp(){
+        testQueue = new Queue<>();
     }
 
     @Test
-    public void testEnqueue2() {
+    public void testQueue() {
 
-        for (int i = 0; i < 100; i++) {
-            Integer temp = (int) Math.random() * 100;
-            testList.enqueue(temp);
-            assertEquals(temp, testList.peek());
+      testQueue.enqueue(1);
+      testQueue.enqueue(2);
+      testQueue.enqueue(3);
 
-        }
+
+      assertEquals(1, testQueue.dequeue());
+      assertEquals(2, testQueue.dequeue());
+      assertEquals(3, testQueue.dequeue());
+
     }
 
     @Test
-    public void testEnqueueEmpty() {
+    public void testSameValueQueue() {
 
-        for (int i = 0; i < 0; i++) {
-            Integer temp = (int) Math.random() * 100;
-            testList.enqueue(temp);
-            assertEquals(temp, testList.peek());
+        testQueue.enqueue(2);
+        testQueue.enqueue(2);
+        testQueue.enqueue(2);
 
-        }
+
+        assertEquals(2, testQueue.dequeue());
+        assertEquals(2, testQueue.dequeue());
+        assertEquals(2, testQueue.dequeue());
+
     }
 
     @Test
-    public void testDequeue() {
-        Integer[] testData = new Integer[10000];
+    public void testUnorderedeQueue() {
 
-        for(int i = 0; i < 10000; i++){
-            int temp =  (int) Math.random() * 100;
-            testData[i] = temp;
-            testList.enqueue(temp);
-        }
+        testQueue.enqueue(4);
+        testQueue.enqueue(2);
+        testQueue.enqueue(8);
 
-        for (int i = testData.length - 1; i >= 0; i--){
-            assertEquals(testData[i], testList.dequeue());
-        }
+
+        assertEquals(4, testQueue.dequeue());
+        assertEquals(2, testQueue.dequeue());
+        assertEquals(8, testQueue.dequeue());
+
     }
 
     @Test
-    public void testDequeue2() {
-        Integer[] testData = new Integer[100];
+    public void testOneDequeue() {
 
-        for(int i = 0; i < 100; i++){
-            int temp =  (int) Math.random() * 100;
-            testData[i] = temp;
-            testList.enqueue(temp);
-        }
+        testQueue.enqueue(8);
 
-        for (int i = testData.length - 1; i >= 0; i--){
-            assertEquals(testData[i], testList.dequeue());
-        }
+        assertEquals(8, testQueue.dequeue());
+
     }
 
     @Test(expected = NoSuchElementException.class)
-    public void testDequeEmpty() {
-        testList.dequeue();
-
+    public void testDequeueOnEmpty(){
+        testQueue.dequeue();
     }
 
     @Test
-    public void peek() {
-        for (int i = 0; i < 10000; i++) {
-            Integer temp = (int) Math.random() * 100;
-            testList.enqueue(temp);
-            assertEquals(temp, testList.peek());
-        }
+    public void testPeek() {
+
+        testQueue.enqueue(4);
+        testQueue.enqueue(2);
+        testQueue.enqueue(8);
+        testQueue.enqueue(1);
+        testQueue.enqueue(5);
+        testQueue.enqueue(6);
+
+
+        assertEquals(4, testQueue.peek());
+        testQueue.dequeue();
+
+        assertEquals(2, testQueue.peek());
+        testQueue.dequeue();
+
+        assertEquals(8, testQueue.peek());
+
     }
 
-    @Test
-    public void testPeek2() {
-
-        for (int i = 0; i < 10; i++) {
-            Integer temp = (int) Math.random() * 100;
-            testList.enqueue(temp);
-            assertEquals(temp, testList.peek());
-
-        }
-
-    }
-
-    @Test
-    public void testPeekEmpty() {
-
-        for (int i = 0; i < 0; i++) {
-            Integer temp = (int) Math.random() * 100;
-            testList.enqueue(temp);
-            assertEquals(temp, testList.peek());
 
 
-        }
-    }
+
 }

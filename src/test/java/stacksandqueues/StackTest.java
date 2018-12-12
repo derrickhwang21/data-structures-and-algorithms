@@ -1,6 +1,7 @@
 package stacksandqueues;
 
 
+import org.junit.Before;
 import org.junit.Test;
 
 
@@ -12,13 +13,18 @@ public class StackTest {
 
 
 
-    Stack<Integer> testList = new Stack<>();
+    Stack<Integer> testList;
+
+    @Before
+    public void beforeTestSetUp(){
+        testList = new Stack<>();
+    }
 
     @Test
     public void testPush() {
 
         for (int i = 0; i < 10000; i++) {
-            Integer temp = (int) Math.random() * 100;
+            Integer temp = (int) (Math.random() * 100) - 1;
             testList.push(temp);
             assertEquals(temp, testList.peek());
 
@@ -30,7 +36,7 @@ public class StackTest {
     public void testPush2() {
 
         for (int i = 0; i < 10; i++) {
-            Integer temp = (int) Math.random() * 100;
+            Integer temp = (int) (Math.random() * 100) -1;
             testList.push(temp);
             assertEquals(temp, testList.peek());
 
@@ -42,7 +48,7 @@ public class StackTest {
     public void testPushEmpty() {
 
         for (int i = 0; i < 0; i++) {
-            Integer temp = (int) Math.random() * 100;
+            Integer temp = (int) (Math.random() * 100) -1;
             testList.push(temp);
             assertEquals(temp, testList.peek());
 
@@ -69,11 +75,11 @@ public class StackTest {
     }
 
     @Test
-    public void testPop(){
+    public void testOneDequeue(){
         Integer[] testData = new Integer[10000];
 
         for(int i = 0; i < 10000; i++){
-            int temp = (int) Math.random() * 100;
+            int temp = (int) (Math.random() * 100) -1;
             testData[i] = temp;
             testList.push(temp);
         }
@@ -88,7 +94,7 @@ public class StackTest {
         Integer[] testData = new Integer[100];
 
         for(int i = 0; i < 100; i++){
-            int temp = (int) Math.random() * 100;
+            int temp = (int) (Math.random() * 100) -1;
             testData[i] = temp;
             testList.push(temp);
         }
@@ -101,7 +107,7 @@ public class StackTest {
     @Test
     public void peek() {
         for (int i = 0; i < 10000; i++) {
-            Integer temp = (int) Math.random() * 100;
+            Integer temp = (int) (Math.random() * 100) -1;
             testList.push(temp);
             assertEquals(temp, testList.peek());
         }
@@ -111,7 +117,7 @@ public class StackTest {
     public void testPeek2() {
 
         for (int i = 0; i < 10; i++) {
-            Integer temp = (int) Math.random() * 100;
+            Integer temp = (int) (Math.random() * 100) -1;
             testList.push(temp);
             assertEquals(temp, testList.peek());
 
@@ -123,7 +129,7 @@ public class StackTest {
     public void testPeekEmpty() {
 
         for (int i = 0; i < 0; i++) {
-            Integer temp = (int) Math.random() * 100;
+            Integer temp = (int) (Math.random() * 100) -1;
             testList.push(temp);
             assertEquals(temp, testList.peek());
 
