@@ -43,7 +43,7 @@ public class Stack<T> {
      * @param element
      */
     public Stack<T> push(T element){
-        Node<T> newItem = new Node<T>(element);
+        Node<T> newItem = new Node<T>(element, this.top);
 
         if (top == null){
             top = newItem;

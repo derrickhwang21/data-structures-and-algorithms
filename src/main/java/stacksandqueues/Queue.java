@@ -1,9 +1,11 @@
 package stacksandqueues;
 
+import java.util.NoSuchElementException;
+
 public class Queue<T> {
 
-    private Node<T> front;
-    private Node<T> rear;
+    protected Node<T> front;
+    protected Node<T> rear;
 
     public Queue() {
         this.front = null;
@@ -11,34 +13,34 @@ public class Queue<T> {
     }
 
     public void enqueue(T value) {
-        Node newNode = new Node(value);
+        Node newNode = new Node(value, null);
         if (this.front == null) {
             this.front = newNode;
             this.rear = newNode;
         } else {
             this.rear.next = newNode;
-            this.rear = newNode;
+            this.rear = this.rear.next;
         }
     }
 
     public T dequeue() {
         if (this.front == null) {
-            return null;
+            throw new NoSuchElementException();
         } else {
             T frontNode = this.front.value;
-            this.front = this.front.next;
-            if (this.front == null) {
+            if (this.rear == this.front) {
                 this.rear = null;
             }
+            this.front = this.front.next;
             return frontNode;
         }
     }
 
     public T peek() {
-        if (this.front != null){
-            return this.front.value;
+        if (this.front == null){
+            throw new NoSuchElementException();
         }else{
-            return null;
+            return front.value;
         }
     }
 
