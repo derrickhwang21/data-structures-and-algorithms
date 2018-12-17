@@ -23,7 +23,21 @@ public class TreeTest {
 
     @Test
     public void testAdd(){
-        
+        BinarySearchTree bt = testTree();
+        assertTrue(bt.containsNode(6));
+        assertTrue(bt.containsNode(3));
+        assertTrue(bt.containsNode(9));
+
+        assertFalse(bt.containsNode(1));
+        assertFalse(bt.containsNode(2));
+        assertFalse(bt.containsNode(0));
+    }
+
+    @Test
+    public void testPreorder(){
+        BinarySearchTree bt = testTree();
+
+
     }
 
 }
