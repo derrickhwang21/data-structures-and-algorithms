@@ -1,7 +1,7 @@
 package Tree;
 
-public class BinarySearchTree {
-    Node root;
+public class BinarySearchTree<T extends Comparable<T>> {
+    Node<T> root;
 
     /**
      * Insertion of a new node
@@ -12,15 +12,15 @@ public class BinarySearchTree {
 
      * @return
      */
-    public Node recursiveAdd(Node current, int value){
+    public Node recursiveAdd(Node<T> current, T value){
         if (current == null){
             return new Node(value);
         }
 
-        if (value < current.value){
+        if (value.compareTo(current.value) < 0){
             current.left = recursiveAdd(current.left, value);
         }
-        else if (value > current.value){
+        else if (value.compareTo(current.value) > 0){
             current.right = recursiveAdd(current.right, value);
         }
         else{
@@ -32,24 +32,45 @@ public class BinarySearchTree {
     /**
      * starts recursion from the root node
      */
-    public void add(int value){
+    public void add(T value){
         root = recursiveAdd(root, value);
     }
 
     /**
      * Recursive method that traverses the tree
      */
-    public boolean containsNodeRecursive(Node current, int value){
+    public Node<T> searchNodeRecursive(Node<T> current, T value){
+        if (current == null){
+            return null;
+        }
+        if (value == current.value){
+            return current;
+        }
+        return value.compareTo(current.value) < 0 ? searchNodeRecursive(current.left, value) : searchNodeRecursive(current.right, value);
+    }
+
+    /**
+     * Brings in a value of node, and returns the node with the desired value
+     */
+    public Node<T> search(T value){
+        return searchNodeRecursive(root, value);
+
+    }
+
+    /**
+     * Recursive method that traverses the tree
+     */
+    public boolean containsNodeRecursive(Node<T> current, T value){
         if (current == null){
             return false;
         }
         if (value == current.value){
             return true;
         }
-        return value < current.value ? containsNodeRecursive(current.left, value) : containsNodeRecursive(current.right, value);
+        return value.compareTo(current.value) < 0 ? containsNodeRecursive(current.left, value) : containsNodeRecursive(current.right, value);
     }
 
-    public boolean containsNode(int value){
+    public boolean containsNode(T value){
         return containsNodeRecursive(root, value);
     }
 

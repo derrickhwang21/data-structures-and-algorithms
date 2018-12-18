@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class TreeTest {
+public class BinarySearchTreeTest {
 
     private BinarySearchTree testTree(){
         BinarySearchTree bt = new BinarySearchTree();
@@ -34,8 +34,14 @@ public class TreeTest {
     }
 
     @Test
-    public void testPreorder(){
+    public void testSearch(){
         BinarySearchTree bt = testTree();
+
+        assertEquals(6,bt.search(6).value);
+        assertEquals(3,bt.search(3).value);
+        assertEquals(9,bt.search(9).value);
+
+        assertEquals(null, bt.search(2));
 
 
     }

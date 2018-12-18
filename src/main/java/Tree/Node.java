@@ -1,11 +1,13 @@
 package Tree;
 
-public class Node {
-    int value;
-    Node left;
-    Node right;
+import java.util.Map;
 
-    public Node(int value){
+public class Node<T extends Comparable<T>>{
+    T value;
+    Node<T> left;
+    Node<T> right;
+
+    public Node(T value){
         this.value = value;
         this.left = null;
         this.right = null;
