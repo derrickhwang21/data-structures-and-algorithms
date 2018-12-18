@@ -7,6 +7,6 @@ import Tree.Tree;
 public class fizzBuzzTree {
 
     public static Tree<Node> fizzBuzzTree(Tree<Node> tree){
-        
+
     }
 }
