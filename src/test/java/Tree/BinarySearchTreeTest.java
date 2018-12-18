@@ -31,6 +31,8 @@ public class BinarySearchTreeTest {
         assertFalse(bt.containsNode(1));
         assertFalse(bt.containsNode(2));
         assertFalse(bt.containsNode(0));
+
+
     }
 
     @Test

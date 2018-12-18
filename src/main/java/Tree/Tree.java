@@ -1,7 +1,14 @@
 package Tree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Tree<T extends Comparable<T>> {
-        Node<T> root;
+      Node<T> root;
+
+
+
+
 
 
 
@@ -9,16 +16,32 @@ public class Tree<T extends Comparable<T>> {
 
     /**
      * first visits the root node, then the left subtree, and finally the right subtree
-     * @param node
+     *
      */
-    public void preOrder(Node<T> node){
-        if (node != null){
-            System.out.print(" " + node.value);
-            preOrder(node.left);
-            preOrder(node.right);
-        }
+    public ArrayList<Node> preOrder(){
+    ArrayList<Node> result = new ArrayList<Node>();
+    Node current = root;
 
+    recursiveInOrder(current, result);
+
+    return result;
+
+
+
+    }
+
+    /**
+     * Recursive method for preOrder
+     */
+    public void recursivePreOrder(Node node, List<Node> values){
+        if(node == null){
+            return;
         }
+        recursivePreOrder(node.left, values);
+        values.add(node);
+        recursivePreOrder(node.right, values);
+
+    }
 
 
     /**
@@ -33,6 +56,19 @@ public class Tree<T extends Comparable<T>> {
         }
 
         }
+
+    /**
+     * recursive method for inOrder
+     */
+    public void recursiveInOrder(Node node, List<Node> list){
+        if (node == null){
+            return;
+        }
+
+        list.add(node);
+        recursivePreOrder(node.left, list);
+        recursivePreOrder(node.right, list);
+    }
 
     /**
      * vists the left subtree, the right subtree and the root node at the end
