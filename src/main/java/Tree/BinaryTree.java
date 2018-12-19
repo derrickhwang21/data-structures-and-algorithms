@@ -7,10 +7,7 @@ public class BinaryTree<T extends Comparable<T>> {
       Node<T> root;
 
 
-//    public BinaryTree(Node<T> root){
-//        this.root = root;
-//    }
-//
+
 
     /**
      * first visits the root node, then the left subtree, and finally the right subtree
@@ -44,8 +41,8 @@ public class BinaryTree<T extends Comparable<T>> {
      * first visiting the left sub-tree, then the root node, and finally the right subtree
      *
      */
-    public ArrayList<T> inOrder(){
-        ArrayList<T> result = new ArrayList<>();
+    public List inOrder(){
+        List result = new ArrayList<>();
         Node current = root;
 
         recursiveInOrder(current, result);
@@ -56,11 +53,11 @@ public class BinaryTree<T extends Comparable<T>> {
     /**
      * recursive method for inOrder
      */
-    public void recursiveInOrder(Node<T> node, ArrayList root){
-        if (node != null) {
-            recursiveInOrder(node.left, root);
-            root.add(node);
-            recursiveInOrder(node.right, root);
+    public void recursiveInOrder(Node root, List values){
+        if (root != null) {
+            recursiveInOrder(root.left, values);
+            values.add(root.value);
+            recursiveInOrder(root.right, values);
         }
     }
 
@@ -68,8 +65,8 @@ public class BinaryTree<T extends Comparable<T>> {
      * vists the left subtree, the right subtree and the root node at the end
      *
      */
-        public ArrayList<T> postOrder(){
-            ArrayList<T> result = new ArrayList<>();
+        public List postOrder(){
+            List result = new ArrayList<>();
             Node current = root;
 
             recursivePostOrder(current, result);
@@ -78,11 +75,11 @@ public class BinaryTree<T extends Comparable<T>> {
 
         }
 
-    public void recursivePostOrder(Node<T> root, ArrayList values){
+    public void recursivePostOrder(Node root, List values){
         if(root != null) {
             recursivePostOrder(root.left, values);
             recursivePostOrder(root.right, values);
-            values.add(root);
+            values.add(root.value);
         }
 
     }
