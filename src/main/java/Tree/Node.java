@@ -2,6 +2,10 @@ package Tree;
 
 import java.util.Map;
 
+/**
+ * Node - class for node constructor
+ * @param <T>of any type
+ */
 public class Node<T extends Comparable<T>>{
     T value;
     Node<T> left;

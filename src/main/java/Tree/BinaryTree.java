@@ -9,9 +9,10 @@ public class BinaryTree<T extends Comparable<T>> {
 
 
 
+
     /**
-     * first visits the root node, then the left subtree, and finally the right subtree
-     *
+     * preOrder - vists the root node, then the left subtree, and finally the right subtree
+     * @return results in a collection of data any type
      */
     public List preOrder(){
     List result = new ArrayList<>();
@@ -23,9 +24,11 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * Recursive method for preOrder
+     * recursivePreorder - recursive helper method for preOrder
+     * @param root current root node
+     * @param values collection of any type data
      */
-    public void recursivePreOrder(Node root, List values){
+    private void recursivePreOrder(Node root, List values){
         if(root != null) {
 
             values.add(root.value);
@@ -38,8 +41,8 @@ public class BinaryTree<T extends Comparable<T>> {
 
 
     /**
-     * first visiting the left sub-tree, then the root node, and finally the right subtree
-     *
+     * inOrder - first visiting the left sub-tree, then the root node, and finally the right subtree
+     * @return results in a collection of data any type
      */
     public List inOrder(){
         List result = new ArrayList<>();
@@ -50,10 +53,13 @@ public class BinaryTree<T extends Comparable<T>> {
 
         }
 
+
     /**
-     * recursive method for inOrder
+     * recursivePreorder - recursive helper method for preOrder
+     * @param root current root Node
+     * @param values collection of any type data
      */
-    public void recursiveInOrder(Node root, List values){
+    private void recursiveInOrder(Node root, List values){
         if (root != null) {
             recursiveInOrder(root.left, values);
             values.add(root.value);
@@ -62,8 +68,8 @@ public class BinaryTree<T extends Comparable<T>> {
     }
 
     /**
-     * vists the left subtree, the right subtree and the root node at the end
-     *
+     * postOrder - vists the left subtree, the right subtree and the root node at the end
+     * @return results in a collection of data any type
      */
         public List postOrder(){
             List result = new ArrayList<>();
@@ -75,7 +81,12 @@ public class BinaryTree<T extends Comparable<T>> {
 
         }
 
-    public void recursivePostOrder(Node root, List values){
+    /**
+     * recursivePreorder - recursive helper method for preOrder
+     * @param root current root Node
+     * @param values collection of any type data
+     */
+    private void recursivePostOrder(Node root, List values){
         if(root != null) {
             recursivePostOrder(root.left, values);
             recursivePostOrder(root.right, values);
