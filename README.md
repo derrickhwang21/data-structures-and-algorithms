@@ -19,6 +19,7 @@ Code Challenge 07 - [Linked List Kth From End](assets/challenge_readmes/ll_kth_f
 Code Challenge 08 - [Merged List](assets/challenge_readmes/ll_merged.md)
 
 Code: Stacks and Queues - [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
+Code: Trees - [Trees](assets/challenge_readmes/Trees.md)
 
 
 
