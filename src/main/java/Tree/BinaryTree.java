@@ -7,13 +7,17 @@ public class BinaryTree<T extends Comparable<T>> {
       Node<T> root;
 
 
+//    public BinaryTree(Node<T> root){
+//        this.root = root;
+//    }
+//
 
     /**
      * first visits the root node, then the left subtree, and finally the right subtree
      *
      */
-    public ArrayList<T> preOrder(){
-    ArrayList<T> result = new ArrayList<>();
+    public List preOrder(){
+    List result = new ArrayList<>();
     Node current = root;
 
     recursivePreOrder(current, result);
@@ -24,13 +28,14 @@ public class BinaryTree<T extends Comparable<T>> {
     /**
      * Recursive method for preOrder
      */
-    public void recursivePreOrder(Node<T> root, ArrayList values){
+    public void recursivePreOrder(Node root, List values){
         if(root != null) {
 
-            values.add(root);
+            values.add(root.value);
             recursivePreOrder(root.left, values);
             recursivePreOrder(root.right, values);
         }
+
 
     }
 

@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class BinarySearchBinaryTreeTest {
+public class BinarySearchTreeTest {
 
-    private BinarySearchBinaryTree testTree(){
-        BinarySearchBinaryTree bt = new BinarySearchBinaryTree();
+    private BinarySearchTree testTree(){
+        BinarySearchTree bt = new BinarySearchTree();
 
         bt.add(6);
         bt.add(4);
@@ -23,7 +23,7 @@ public class BinarySearchBinaryTreeTest {
 
     @Test
     public void testAdd(){
-        BinarySearchBinaryTree bt = testTree();
+        BinarySearchTree bt = testTree();
         assertTrue(bt.containsNode(6));
         assertTrue(bt.containsNode(3));
         assertTrue(bt.containsNode(9));
@@ -37,7 +37,7 @@ public class BinarySearchBinaryTreeTest {
 
     @Test
     public void testSearch(){
-        BinarySearchBinaryTree bt = testTree();
+        BinarySearchTree bt = testTree();
 
         assertEquals(6,bt.search(6).value);
         assertEquals(3,bt.search(3).value);

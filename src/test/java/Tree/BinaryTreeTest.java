@@ -38,14 +38,28 @@ public class BinaryTreeTest {
     @Test
     public void preOrderTest() {
         BinaryTree testBinaryTree = new BinaryTree();
-        
+
+        testBinaryTree.root = new Node(6);
+        testBinaryTree.root.left = new Node(4);
+        testBinaryTree.root.left.left = new Node(3);
+        testBinaryTree.root.left.right = new Node(5);
+        testBinaryTree.root.right = new Node(8);
+        testBinaryTree.root.right.left = new Node(7);
+        testBinaryTree.root.right.right = new Node(9);
 
 
+        ArrayList<Integer> expected = new ArrayList<>();
 
+        expected.add(3);
+        expected.add(4);
+        expected.add(5);
+        expected.add(6);
+        expected.add(7);
+        expected.add(8);
+        expected.add(9);
 
-
-
-
+        System.out.println(expected);
+        System.out.println(testBinaryTree.preOrder());
 
 
 
