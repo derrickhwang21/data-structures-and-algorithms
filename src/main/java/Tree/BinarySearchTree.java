@@ -12,7 +12,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
 
      * @return current - Node to add
      */
-    public Node recursiveAdd(Node<T> current, T value){
+    private Node recursiveAdd(Node<T> current, T value){
         if (current == null){
             return new Node(value);
         }
@@ -41,7 +41,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
      *
      * @return value of null or node
      */
-    public Node<T> searchNodeRecursive(Node<T> current, T value){
+    private Node<T> searchNodeRecursive(Node<T> current, T value){
         if (current == null){
             return null;
         }
