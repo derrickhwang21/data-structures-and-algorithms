@@ -1,4 +1,4 @@
-# Linked List
+# Binary Tree & Binary Search Tree Implementation
 CodeFellows - 401 - Java
 CODE: Create a Binary/Binary-Search Tree class
 ## Challenge
@@ -12,21 +12,18 @@ Create a BinarySearchTree class
 * Define a method named `search` that brings in a value of node, and returns the node with the desired value
 
 ## Approach & Efficiency
-Created LinkedList and Node class
+Using a recursive method, for my methods, aside for it seeming more elegant by being less verbose; a binary tree is a recursive data structure where each node can have 2 children at most.
 
+For the implementation, I used a Node class which store any type data T.
 
 
 
 
 ## API
-| Class | Method | Description |
-| --- | --- | --- |
-|Tree| `preOrder` | which takes in an integer value as an argument and adds a new node with that value to the "head" of the list with an O(1) Time performance |
-|Tree| `includes(int findValue)` | which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.|
-|Tree| `postOrder()` | which takes in no arguments and outputs all of the current Node values in the Linked List. |
-|BinarySearchTree| `add` | which takes in a value as target and adds the newValue before the target value. |
-| BinarySearchTree| `search` | which takes in a value as target and adds the newValue before the target value. |
-| `toIntegerArray()` | which takes in no arguments and outputs all of the current Node values into an integer array. |
-| `kthFromEnd(int k)` | which takes in a value and returns the nth value from the end of the returns.. |
-| `merge(LinkedList one, LinkedList two)` | which takes in two linked lists and merges both into one linked list. |
-| `append(int value)` | which takes in an integer value and adds a new node with that value to the end of the list. |
+Modifiers and Type      | Class       | Method    | Description |
+|---                    | ---         | ---     |         --- |
+|  java.util.List       |`BinaryTree `  | `preOrder()`   | vists the root node, then the left subtree, and finally the right subtree |
+|  java.util.List       |`BinaryTree `  | `postOrder()`   | vists the left subtree, the right subtree and the root node at the end |
+|  java.util.List       |`BinaryTree `  | `inOrder()`   | inOrder - first visiting the left sub-tree, then the root node, and finally the right subtree |
+|  void       |`BinarySearchTree `  | `add(T value)`   | recursive method to insert new node with T value  |
+|  boolean       |`BinarySearchTree `  | `containsNode(T value)`   | recursive method check if the node with T value exists |

@@ -1,20 +1,20 @@
 package Tree;
 
-public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
+public class BinarySearchTree<T extends Comparable<T>> extends BinaryTree<T> {
     Node<T> root;
 
     /**
-     * Insertion of a new node
+     * recursiveAdd - recursive helper to insert new node
      *
      * If the new node's value is lower than the current node's, we go to the left child
      * If the new node's value is greater than the current node's we go the right child
      * when the current node is null, we've reached a leaf node and we can insert the new node in that position
 
-     * @return
+     * @return current - Node to add
      */
-    public Node recursiveAdd(Node<T> current, T value){
+    private Node recursiveAdd(Node<T> current, T value){
         if (current == null){
-            return new Node(value, null, null);
+            return new Node(value);
         }
 
         if (value.compareTo(current.value) < 0){
@@ -30,16 +30,18 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
     }
 
     /**
-     * starts recursion from the root node
+     * add - starts recursion from the root node
      */
     public void add(T value){
         root = recursiveAdd(root, value);
     }
 
     /**
-     * Recursive method that traverses the tree
+     * searchNodeRecursive - Recursive helper method that traverses the tree
+     *
+     * @return value of null or node
      */
-    public Node<T> searchNodeRecursive(Node<T> current, T value){
+    private Node<T> searchNodeRecursive(Node<T> current, T value){
         if (current == null){
             return null;
         }
@@ -50,7 +52,9 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
     }
 
     /**
-     * Brings in a value of node, and returns the node with the desired value
+     * search - Brings in a value of node, and returns the node with the desired value
+     *
+     *
      */
     public Node<T> search(T value){
         return searchNodeRecursive(root, value);
@@ -58,7 +62,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
     }
 
     /**
-     * Recursive method that traverses the tree
+     * containsNodeRecursive - Recursive helper method that traverses the tree
      */
     public boolean containsNodeRecursive(Node<T> current, T value){
         if (current == null){
@@ -70,6 +74,11 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
         return value.compareTo(current.value) < 0 ? containsNodeRecursive(current.left, value) : containsNodeRecursive(current.right, value);
     }
 
+    /**
+     * containsNode - method to traverse the tree to check if the node with T value exists
+     * @param value to find
+     * @return boolean
+     */
     public boolean containsNode(T value){
         return containsNodeRecursive(root, value);
     }
