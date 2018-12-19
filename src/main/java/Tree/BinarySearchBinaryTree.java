@@ -1,6 +1,6 @@
 package Tree;
 
-public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
+public class BinarySearchBinaryTree<T extends Comparable<T>> extends BinaryTree<T> {
     Node<T> root;
 
     /**
@@ -14,7 +14,7 @@ public class BinarySearchTree<T extends Comparable<T>> extends Tree<T>{
      */
     public Node recursiveAdd(Node<T> current, T value){
         if (current == null){
-            return new Node(value, null, null);
+            return new Node(value);
         }
 
         if (value.compareTo(current.value) < 0){
