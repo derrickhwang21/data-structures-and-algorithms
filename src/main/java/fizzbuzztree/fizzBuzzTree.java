@@ -4,21 +4,6 @@ import Tree.BinaryTree;
 import Tree.Node;
 
 public class fizzBuzzTree {
-//    public class fizzBuzzTree<T extends Comparable<T>> extends BinaryTree<T>{
-
-//    public static BinaryTree<T> fizzBuzzTree(Tree.BinaryTree<T> tree){
-//        Node<T> root;
-//
-//
-//
-//
-//    }
-
-//    public static BinaryTree<T> fizzBuzzTree(BinaryTree<T> tree){
-//
-//        iterativeSearchHelper(tree.root);
-//        return tree;
-//    }
 
     public BinaryTree fizzBuzzTree(BinaryTree tree){
 
@@ -26,7 +11,7 @@ public class fizzBuzzTree {
         return tree;
     }
 
-    public static void iterativeSearchHelper(Node root){
+    private void iterativeSearchHelper(Node root){
         if(root == null) {
             return;
         }

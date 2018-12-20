@@ -8,9 +8,9 @@ import java.util.Map;
  * @param <T>of any type
  */
 public class Node<T extends Comparable<T>> {
-    T value;
-    Node<T> left;
-    Node<T> right;
+    public T value;
+    public Node<T> left;
+    public Node<T> right;
 
     public Node(T value){
         this.value = value;

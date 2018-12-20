@@ -9,26 +9,7 @@ public class BinaryTree<T extends Comparable<T>> {
 
 
     public Node<T> root;
-    private Comparator<T> comparator;
 
-    public void BST()
-    {
-        root = null;
-        comparator = null;
-    }
-
-    public void BST(Comparator<T> comp)
-    {
-        root = null;
-        comparator = comp;
-    }
-
-    private int compare(T x, T y)
-    {
-        if(comparator == null) return x.compareTo(y);
-        else
-            return comparator.compare(x,y);
-    }
 
 
     /**
