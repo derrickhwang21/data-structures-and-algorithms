@@ -1,13 +1,34 @@
 package Tree;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class BinaryTree<T extends Comparable<T>> {
-      Node<T> root;
 
 
 
+    public Node<T> root;
+    private Comparator<T> comparator;
+
+    public void BST()
+    {
+        root = null;
+        comparator = null;
+    }
+
+    public void BST(Comparator<T> comp)
+    {
+        root = null;
+        comparator = comp;
+    }
+
+    private int compare(T x, T y)
+    {
+        if(comparator == null) return x.compareTo(y);
+        else
+            return comparator.compare(x,y);
+    }
 
 
     /**
@@ -28,7 +49,7 @@ public class BinaryTree<T extends Comparable<T>> {
      * @param root current root node
      * @param values collection of any type data
      */
-    private void recursivePreOrder(Node root, List values){
+    protected void recursivePreOrder(Node root, List values){
         if(root != null) {
 
             values.add(root.value);
@@ -59,7 +80,7 @@ public class BinaryTree<T extends Comparable<T>> {
      * @param root current root Node
      * @param values collection of any type data
      */
-    private void recursiveInOrder(Node root, List values){
+    protected void recursiveInOrder(Node root, List values){
         if (root != null) {
             recursiveInOrder(root.left, values);
             values.add(root.value);
@@ -86,7 +107,7 @@ public class BinaryTree<T extends Comparable<T>> {
      * @param root current root Node
      * @param values collection of any type data
      */
-    private void recursivePostOrder(Node root, List values){
+    protected void recursivePostOrder(Node root, List values){
         if(root != null) {
             recursivePostOrder(root.left, values);
             recursivePostOrder(root.right, values);
