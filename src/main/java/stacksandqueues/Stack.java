@@ -13,9 +13,11 @@ public class Stack<T> {
       *
      */
 
-    private Node<T> top = null;
+    protected Node<T> top;
 
-
+    public Stack(){
+        top = null;
+    }
 
     /**
      * Returns true if this stack is empty
@@ -36,18 +38,9 @@ public class Stack<T> {
      *
      * @param element
      */
-    public Stack<T> push(T element){
-        Node<T> newItem = new Node<T>(element, this.top);
-
-        if (top == null){
-            top = newItem;
-        }
-        else{
-            newItem.next = top;
-            top = newItem;
-        }
-        return this;
-
+    public void push(T element){
+        Node newItem = new Node(element, this.top);
+        top = newItem;
     }
 
     /**
@@ -57,11 +50,8 @@ public class Stack<T> {
      * @throws NoSuchElementException if this stack is empty
      */
 
-    public T pop(){
-        if (top == null){
-            throw new NoSuchElementException("The stack is empty");
-        }
-        T output = top.value;
+    public Node<T> pop(){
+        Node<T> output = top;
         top = top.next;
 
         return output;
@@ -75,10 +65,7 @@ public class Stack<T> {
      *
      */
     public T peek(){
-        if(top == null){
-            throw new NoSuchElementException("The stack is empty");
-        }
-        return top.value;
+        return top != null ? top.value : null;
     }
 
 

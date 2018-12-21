@@ -2,35 +2,59 @@ package QueueWithStacks;
 
 import org.junit.Before;
 import org.junit.Test;
+import stacksandqueues.Node;
+import stacksandqueues.Stack;
 
 
 import static org.junit.Assert.*;
 
 public class PseudoQueueTest {
 
-    PseudoQueue testPseudoQueue;
 
-    @Before
-    public void beforeTestSetUp(){
-        testPseudoQueue = new PseudoQueue();
+
+    @Test
+    public void testDequeue() {
+        PseudoQueue<Integer> testQueue = new PseudoQueue<>();
+
+        testQueue.push(1);
+        testQueue.push(2);
+        testQueue.push(3);
+        testQueue.push(4);
+
+         Node newNode = new Node(testQueue.peek());
+
+
+        assertEquals(1, testQueue.dequeue());
+
     }
 
     @Test
-    public void testEnqueue() {
+    public void testWithMultipleEnqueue() {
+        PseudoQueue testQueue = new PseudoQueue<>();
+        Stack testStack = new Stack<>();
 
-        testPseudoQueue.enqueue(1);
-        testPseudoQueue.enqueue(3);
-        assertEquals(1, testPseudoQueue.dequeue());
+        testStack.push(2);
+        testQueue = (PseudoQueue) testStack;
+        testQueue.enqueue(3);
+        System.out.println(testQueue.peek());
 
-//        testPseudoQueue.enqueue(6);
-//        testPseudoQueue.enqueue(4);
-//        testPseudoQueue.enqueue(2);
+
+
+
+
+
+//        int result = testQueue.peek();
 //
-//        assertEquals(6, testPseudoQueue.dequeue());
-//        assertEquals(4, testPseudoQueue.dequeue());
-//        assertEquals(2, testPseudoQueue.dequeue());
+//        assertEquals(7, result);
 
     }
+
+//    @Test
+//    public void testEmptyEnqueue(){
+//
+//        testPseudoQueue.enqueue(null);
+//        assertTrue(testPseudoQueue.dequeue() == null);
+//    }
 
 
 }

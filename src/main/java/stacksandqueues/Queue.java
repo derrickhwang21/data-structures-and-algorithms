@@ -24,26 +24,21 @@ public class Queue<T> {
     }
 
     public T dequeue() {
-        if (this.front == null) {
+        if (front == null) {
             throw new NoSuchElementException();
         } else {
-            T frontNode = this.front.value;
-            if (this.rear == this.front) {
-                this.rear = null;
+            T frontNode = front.value;
+            if (rear == front) {
+                rear = null;
             }
-            this.front = this.front.next;
+            front = front.next;
             return frontNode;
         }
     }
 
-    public T peek() {
-        if (this.front == null){
-            throw new NoSuchElementException();
-        }else{
-            return front.value;
-        }
+    public T peek(){
+        return front != null ? front.value : null;
     }
-
 }
 
 
