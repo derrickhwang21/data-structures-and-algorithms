@@ -17,7 +17,7 @@ public class StackTest {
 
     @Before
     public void beforeTestSetUp(){
-        testList = new Stack<>();
+        testList = new Stack<Integer>();
     }
 
     @Test
@@ -25,6 +25,7 @@ public class StackTest {
 
         for (int i = 0; i < 10000; i++) {
             Integer temp = (int) (Math.random() * 100) - 1;
+
             testList.push(temp);
             assertEquals(temp, testList.peek());
 
