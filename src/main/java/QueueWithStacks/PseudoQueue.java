@@ -6,29 +6,31 @@ import stacksandqueues.Stack;
 
 public class PseudoQueue<T> extends Stack{
 
-    private Stack<T> stackOne;
-    private Stack<T> stackTwo;
+    public Stack<T> stackOne;
+    public Stack<T> stackTwo;
 
-//    public PseudoQueue() {
-//        stackOne = new Stack();
-//        stackTwo = new Stack();
-//    }
+    public PseudoQueue() {
+        stackOne = new Stack();
+        stackTwo = new Stack();
+    }
 
     /**
      *
      * @param value
      */
     public void enqueue(T value) {
-        if (stackOne.peek() == null) {
-            this.stackOne.push(value);
-        } else {
-            while (stackOne != null) {
-                stackTwo.push(stackOne.pop().value);
+        if (stackOne.peek() == null && stackTwo.peek() == null) {
+            stackOne.push(value);
+        } else if (stackOne.peek() == null){
+            stackOne.push(value);}
+        else{
+            while (stackTwo.peek() != null) {
+//                        Node<T> temp = new Node<>(value);
+
+                stackOne.push(stackOne.pop().value);
             }
             stackOne.push(value);
-            while (stackTwo.peek() != null) {
-                stackOne.push(stackTwo.pop().value);
-            }
+
         }
     }
 
