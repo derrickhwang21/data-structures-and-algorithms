@@ -1,33 +1,28 @@
 package graph;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
 
 public class Graph<T> {
 
-    private Map<T, Node<T>> adjacencyList;
+    private ArrayList<Node <T>> nodes;
 
-    public Graph(){
-        adjacencyList = new HashMap<>();
+    public Graph(List<Edge> edges){
+        this.nodes = new ArrayList<>();
     }
 
     /** Adds a new node to the graph -
      * Takes in the value of that node -
      * Returns the added node2
-     * @param node
+     * @param nodeData
      * @return
      */
-    public boolean AddNode(T node){
-    if(adjacencyList.containsKey(node)){
-        return false;
-    }
-    adjacencyList.put(node, new Node<>(node));
-    return true;
-    }
 
-
-    public boolean addEdge(T node1, T node2){
-    return addEdge(node1, node2, 0);
+    public Node<T> addNode(T nodeData){
+        Node node = new Node(nodeData);
+        this.nodes.add(node);
+        return node;
     }
 
     /** Adds a new edge between two nodes in the graph -
@@ -36,20 +31,42 @@ public class Graph<T> {
      * Both nodes should have already be in the Graph
      *
      */
-    public boolean addEdge (T vertex1, T vertex2, int weight){
-        if (!containsNode(vertex1) || !containsNode(vertex2)){
-            throw new RuntimeException("Node does not exist");
+    public boolean addEdge(Node<T> nodeOne, Node<T> nodeTwo){
+        if (this.nodes.contains(nodeOne) && this.nodes.contains(nodeTwo)){
+            nodeOne.addNeighbor(nodeTwo);
+            nodeOne.addNeighbor(nodeTwo);
+            return true;
         }
-        Node<T> node1 = getNode(vertex1);
-        Node<T> node2 = getNode(vertex2);
-        return node1.addEdge(node2, weight);
+        return false;
     }
 
-    public boolean containsNode(T node){
-        return adjacencyList.containsKey(node);
+
+    /**
+     *
+     * @return all of the nodes in the graph as a collection
+     */
+    public String getNodes() {
+        return this.nodes.toString();
     }
 
-    private Node<T> getNode(T value){
-        return adjacencyList.get(value);
+    /**
+     * Returns a collection of nodes connected to the given node
+     * @param node
+     * @return collection
+     */
+    public String getNeighbors(Node<T> node){
+        if (this.nodes.contains(node) && node.neighbors != null){
+            return node.neighbors.toString();
+        } else{
+            return null;
+        }
+    }
+
+    /**
+     *
+     * @return the total number of nodes in the graph
+     */
+    public int size() {
+        return this.nodes.size();
     }
 }

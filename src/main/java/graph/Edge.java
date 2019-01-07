@@ -1,29 +1,15 @@
 package graph;
 
 public class Edge<T> {
+    public int weight;
+    public Node<T> node;
 
-    private Node<T> node1;
+    public Edge(Node<T> node){
+        this.node = node; }
 
-    private Node<T> node2;
-
-    private int weight;
-
-    public Edge(Node<T> node1, Node<T> node2, int weight){
-        this.node1 = node1;
-        this.node2 = node2;
+    public Edge(Node<T> node, int weight){
+        this.node = node;
         this.weight = weight;
     }
 
-    public Node<T> fromNode(){
-        return node1;
-    }
-
-    public Node<T> toNode(){
-        return node2;
-    }
-
-    public boolean isBetween(Node<T> node1, Node<T> node2){
-        return (this.node1 == node1 && this.node2 == node2);
-    }
-
-}
+   }
