@@ -22,7 +22,7 @@ Code: Stacks and Queues - [Stack And Queue](assets/challenge_readmes/stack_and_q
 
 Code: Trees - [Trees](assets/challenge_readmes/Trees.md)
 
-Code: Graph - [Trees](assets/challenge_readmes/Graph.md)
+Code: Graph - [Graph](assets/challenge_readmes/Graph.md)
 
 
 
