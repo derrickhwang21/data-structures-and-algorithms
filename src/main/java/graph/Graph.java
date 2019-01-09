@@ -6,10 +6,10 @@ import java.util.*;
 
 public class Graph<T> {
 
-    private ArrayList<Node <T>> nodes;
+    public Set<Node<T>> nodes;
 
-    public Graph(List<Edge> edges){
-        this.nodes = new ArrayList<>();
+    public Graph(){
+        this.nodes = new HashSet<>();
     }
 
     /** Adds a new node to the graph -
@@ -18,10 +18,9 @@ public class Graph<T> {
      * @param nodeData
      * @return
      */
-
     public Node<T> addNode(T nodeData){
-        Node node = new Node(nodeData);
-        this.nodes.add(node);
+        Node<T> node = new Node<>(nodeData);
+        nodes.add(node);
         return node;
     }
 
@@ -31,22 +30,20 @@ public class Graph<T> {
      * Both nodes should have already be in the Graph
      *
      */
-    public boolean addEdge(Node<T> nodeOne, Node<T> nodeTwo){
-        if (this.nodes.contains(nodeOne) && this.nodes.contains(nodeTwo)){
-            nodeOne.addNeighbor(nodeTwo);
-            nodeOne.addNeighbor(nodeTwo);
-            return true;
+    public void addEdge(int weight, Node<T> nodeOne, Node<T> nodeTwo){
+        if (!nodes.contains(nodeOne) || !nodes.contains(nodeTwo)){
+            throw new IllegalArgumentException("Nodes must be contained in graph.");
         }
-        return false;
+        nodeOne.addEdge(weight, nodeTwo);
+        nodeTwo.addEdge(weight, nodeOne);
     }
-
 
     /**
      *
      * @return all of the nodes in the graph as a collection
      */
-    public String getNodes() {
-        return this.nodes.toString();
+    public Set<Node<T>> getNodes() {
+        return nodes;
     }
 
     /**
@@ -54,12 +51,11 @@ public class Graph<T> {
      * @param node
      * @return collection
      */
-    public String getNeighbors(Node<T> node){
-        if (this.nodes.contains(node) && node.neighbors != null){
-            return node.neighbors.toString();
-        } else{
-            return null;
+    public Set<Edge<T>> getNeighbors(Node node){
+        if(!nodes.contains(node)){
+            throw new IllegalArgumentException("Node must be contained in graph");
         }
+        return node.neighbors;
     }
 
     /**
@@ -67,6 +63,6 @@ public class Graph<T> {
      * @return the total number of nodes in the graph
      */
     public int size() {
-        return this.nodes.size();
+        return nodes.size();
     }
 }
