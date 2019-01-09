@@ -5,7 +5,7 @@ public class Edge<T> {
     public Node<T> node;
 
     public Edge(Node<T> node){
-        this.node = node; }
+        this(node, 1); }
 
     public Edge(Node<T> node, int weight){
         this.node = node;
