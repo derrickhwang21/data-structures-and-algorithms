@@ -1,6 +1,9 @@
 package graph;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -51,6 +54,9 @@ public class GraphTest {
         assertEquals(1,node2.neighbors.iterator().next().weight,"weight should be 1");
     }
 
+    /**
+     * Test Graph: getNodes Method
+     */
     @Test
     public void getNodes() {
         Graph<String> g = new Graph();
@@ -66,6 +72,9 @@ public class GraphTest {
         assertTrue(vertices.contains(node3));
     }
 
+    /**
+     * Test Graph: getNeighbors Method
+     */
     @Test
     public void getNeighbors() {
         Graph<String> g = new Graph();
@@ -92,8 +101,11 @@ public class GraphTest {
         assertTrue(neighborNode4.size() == 0);
     }
 
+    /**
+     * Test Graph: size Method
+     */
     @Test
-    public void size() {
+    public void testSize() {
         Graph g = new Graph();
         assertEquals(0, g.size());
 
@@ -102,5 +114,38 @@ public class GraphTest {
 
         g.addNode("B");
         assertEquals(2, g.size());
+    }
+
+    /**
+     * Test Graph: Bread-First Search Method
+     */
+    @Test
+    public void testBFS() {
+        Graph<String> g = new Graph<>();
+
+        Node<String> P = g.addNode("P");
+        Node<String> A = g.addNode("A");
+        Node<String> C = g.addNode("C");
+        Node<String> G = g.addNode("G");
+        Node<String> X = g.addNode("X");
+        Node<String> T = g.addNode("T");
+
+        g.addEdge(1, P, A);
+        g.addEdge(1, A, C);
+        g.addEdge(1, A, G);
+        g.addEdge(1, C, G);
+        g.addEdge(1, C, X);
+        g.addEdge(1, C, T);
+        g.addEdge(1, T, G);
+
+        Iterable<Node> result = (Iterable<Node>) g.bfs(P);
+        Iterator<Node> i = result.iterator();
+
+        assertEquals(P, i.next());
+        assertEquals(A, i.next());
+        assertEquals(G, i.next());
+        assertEquals(C, i.next());
+        assertEquals(T, i.next());
+        assertEquals(X, i.next());
     }
 }

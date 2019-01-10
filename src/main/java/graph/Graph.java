@@ -63,4 +63,35 @@ public class Graph<T> {
     public int size() {
         return nodes.size();
     }
+
+    /**
+     * Breadth First Traversal Method
+     *
+     *
+     * @param input Node Type
+     * @return Collection of Nodes in the order they were visited
+     *
+     * Credit: Michelle Ferreirae for demostrating the implementation of this method using an Iterable datatype
+     */
+    public static Iterable<Node> bfs(Node input){
+        LinkedList<Node> queue = new LinkedList<>();
+
+        Queue<Node> nodesToVisit = new LinkedList<>();
+        nodesToVisit.add(input);
+
+        HashSet<Node> visitedNodes = new HashSet<>();
+        visitedNodes.add(input);
+        while(!nodesToVisit.isEmpty()){
+            Node element = nodesToVisit.poll();
+            queue.add(element);
+            for(Edge neighbor : (Set<Edge>) element.neighbors){
+                Node neighborNode = neighbor.node;
+                if(!visitedNodes.contains(neighborNode)){
+                    nodesToVisit.add(neighborNode);
+                    visitedNodes.add(neighborNode);
+                }
+            }
+        }
+        return queue;
+    }
 }
