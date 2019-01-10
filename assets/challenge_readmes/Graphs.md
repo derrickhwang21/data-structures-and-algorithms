@@ -20,6 +20,14 @@ Given a business trip itinerary, and an Alaska Airlines route map, is the trip p
 
 ![array_shift white board](../graphs-bfs.jpg)
 
+### Challenge: 11 - Get Edge
+Conduct a depth first preorder traversal on a graph.
+
+Create a function that accepts an adjacency list as a graph, and conducts a depth first traversal.
+
+Return a collection of nodes in their preorder depth-first traversal order.
+
+![array_shift white board](../graphs-bfs.jpg)
 ## Approach & Efficiency
 Creating a Graph specific node and edge class, each vertex in the graph is associated with the group of its neighboring vertices or edges.
 
@@ -38,3 +46,4 @@ Modifiers and Type      | Class       | Method    | Description | Big O |
 |  java.util*       |`Graph `  | `size()`   | Returns a collection of nodes connected to the give node |  Space: O(1) Time: O(1)
 |  java.util*       |`Graph `  | `bfs(Node input)`   | Returns a collection of nodes given a starting point node using bread-first search method |  Space: O(n) Time: O(n)
 |  java.util*       |`Graph `  | `getEdge(String arrayCityNames)`   | Returns a collection of nodes given a starting point node using bread-first search method |  Space: O(n) Time: O(n)
+|  java.util*       |`Graph `  | `depthFirstTraversal(Node input)`   | Returns a collection of nodes given a starting point node using bread-first search method |  Space: O(n) Time: O(n)
