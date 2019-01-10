@@ -13,6 +13,7 @@ The implemented Graph class should be represented as an adjacency list, and shou
 ### Challenge: 09 - Breadth-First Search
 Implement a breadth-first traversal on a graph.
 
+![array_shift white board](../graphs-bfs.jpg)
 ## Approach & Efficiency
 Creating a Graph specific node and edge class, each vertex in the graph is associated with the group of its neighboring vertices or edges.
 
