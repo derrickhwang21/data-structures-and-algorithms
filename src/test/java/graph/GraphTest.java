@@ -9,7 +9,7 @@ import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class GraphTest {
-    
+
     //Credit: Michelle Ferreirae from lecture Day 26 part 1
     @Test
     public void testGraphConstructor(){
