@@ -10,6 +10,9 @@ The implemented Graph class should be represented as an adjacency list, and shou
 * `contains`
 * `getHash`
 
+### Code Challenge 11 - Repeated Words
+Still developing.
+
 
 ## Approach & Efficiency
 Creating a Hashtable specific nodeclass, each HashTable stores data in the form of key and value. Every key is unique, but values can repeat. Everytime a key is generated. The key is passed to a hash function. In this implementation, the load factor is 0.7.

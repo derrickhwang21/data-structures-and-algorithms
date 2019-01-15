@@ -48,6 +48,7 @@ public class Hashtable<K, V> {
      * @param key
      */
     public void add(K key, V value) {
+
         int bucketIndex = getHash(key);
         Node<K, V> current = table.get(bucketIndex);
 
@@ -119,19 +120,22 @@ public class Hashtable<K, V> {
      * Code Challenge - 12: Repeated_Words
      */
     public static String getRepeatedWords(String input){
-        String[] words = input.split("(?i)[a-z]");
-        String headOfWords = words[0];
-        Hashtable<Integer, String> table = new Hashtable<Integer, String>();
+        // credit: Sooze for regex string with ^ carrot implementation
+        String[] words = input.split("[^A-za-z]");
+//        String headOfWords = words[0];
+        Hashtable<String, String> table = new Hashtable<String, String>();
+
 
         for(int i = 0; i < words.length; i++){
-            if(!table.contains(i)){
-                table.add(i, headOfWords);
-                headOfWords = words[i];
+            if(!table.contains(words[i])){
+                table.add(words[i], words[i]);
+            }else if(table.contains(words[i])){
+                return table.find(words[i]);
             }else{
-                headOfWords = table.find(i);
+                return "no repeat";
             }
         }
-        return "No repeating word";
+        return "no repeat";
     }
 
 }
