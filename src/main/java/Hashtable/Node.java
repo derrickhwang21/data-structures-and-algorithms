@@ -1,27 +1,27 @@
 package Hashtable;
 
-public class Node {
-    protected Object key;
-    protected Object value;
-    protected Node next;
+public class Node<K, V> {
+    protected K key;
+    protected V value;
+    Node<K, V> next;
 
-    Node (Object key, Object value, Node next){
+    Node(K key, V value){
         this.key = key;
         this.value = value;
-        this.next = next;
+
     }
 
-    Node(){
-    }
-    public Object getKey() {
+
+    public K getKey() {
         return key;
     }
 
-    public Object getValue() {
+
+
+    public V getValue() {
         return value;
     }
 
-    public Node getNext() {
-        return next;
-    }
+
+
 }
