@@ -1,8 +1,8 @@
-# Graphs
+# HashTable
 CodeFellows - 401 - Java
 CODE: Implement Hash Tables
 
-### Challenge: Code - Graph
+### Challenge: Code - HashTable
 The implemented Graph class should be represented as an adjacency list, and should include:
 * `add`
 * `find`
