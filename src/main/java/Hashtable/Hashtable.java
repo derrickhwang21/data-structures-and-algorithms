@@ -1,6 +1,8 @@
 package Hashtable;
 
 
+import jdk.nashorn.internal.ir.ReturnNode;
+
 import java.util.ArrayList;
 
 public class Hashtable<K, V> {
@@ -111,6 +113,25 @@ public class Hashtable<K, V> {
             current = current.next;
         }
         return false;
+    }
+
+    /**
+     * Code Challenge - 12: Repeated_Words
+     */
+    public static String getRepeatedWords(String input){
+        String[] words = input.split("(?i)[a-z]");
+        String headOfWords = words[0];
+        Hashtable<Integer, String> table = new Hashtable<Integer, String>();
+
+        for(int i = 0; i < words.length; i++){
+            if(!table.contains(i)){
+                table.add(i, headOfWords);
+                headOfWords = words[i];
+            }else{
+                headOfWords = table.find(i);
+            }
+        }
+        return "No repeating word";
     }
 
 }
