@@ -1,6 +1,8 @@
 package Hashtable;
 
 
+import jdk.nashorn.internal.ir.ReturnNode;
+
 import java.util.ArrayList;
 
 public class Hashtable<K, V> {
@@ -46,6 +48,7 @@ public class Hashtable<K, V> {
      * @param key
      */
     public void add(K key, V value) {
+
         int bucketIndex = getHash(key);
         Node<K, V> current = table.get(bucketIndex);
 
@@ -111,6 +114,28 @@ public class Hashtable<K, V> {
             current = current.next;
         }
         return false;
+    }
+
+    /**
+     * Code Challenge - 12: Repeated_Words
+     */
+    public static String getRepeatedWords(String input){
+        // credit: Sooze for regex string with ^ carrot implementation
+        String[] words = input.split("[^A-za-z]");
+//        String headOfWords = words[0];
+        Hashtable<String, String> table = new Hashtable<String, String>();
+
+
+        for(int i = 0; i < words.length; i++){
+            if(!table.contains(words[i])){
+                table.add(words[i], words[i]);
+            }else if(table.contains(words[i])){
+                return table.find(words[i]);
+            }else{
+                return "no repeat";
+            }
+        }
+        return "no repeat";
     }
 
 }
