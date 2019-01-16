@@ -1,6 +1,10 @@
 package graph;
 
+import org.junit.After;
 import org.junit.jupiter.api.Test;
+
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.Set;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -42,6 +46,7 @@ public class GraphTest {
         Node<String> node2 = g.addNode("B");
         g.addEdge(1, node1, node2);
 
+        System.out.println(node1.neighbors);
         assertEquals(1, node1.neighbors.size(),"node 1 should have one neighbor");
         assertEquals(node2, node1.neighbors.iterator().next().node,"That neighbor should be node 2");
         assertEquals(1,node1.neighbors.iterator().next().weight,"weight should be 1");
@@ -51,6 +56,9 @@ public class GraphTest {
         assertEquals(1,node2.neighbors.iterator().next().weight,"weight should be 1");
     }
 
+    /**
+     * Test Graph: getNodes Method
+     */
     @Test
     public void getNodes() {
         Graph<String> g = new Graph();
@@ -66,6 +74,9 @@ public class GraphTest {
         assertTrue(vertices.contains(node3));
     }
 
+    /**
+     * Test Graph: getNeighbors Method
+     */
     @Test
     public void getNeighbors() {
         Graph<String> g = new Graph();
@@ -92,8 +103,11 @@ public class GraphTest {
         assertTrue(neighborNode4.size() == 0);
     }
 
+    /**
+     * Test Graph: size Method
+     */
     @Test
-    public void size() {
+    public void testSize() {
         Graph g = new Graph();
         assertEquals(0, g.size());
 
@@ -103,4 +117,41 @@ public class GraphTest {
         g.addNode("B");
         assertEquals(2, g.size());
     }
+
+    /**
+     * Test Graph: Bread-First Search Method
+     */
+    @Test
+    @After
+    public void testBFS() {
+        Graph<String> graphBFS = new Graph<>();
+
+        Node<String> P = graphBFS.addNode("P");
+        Node<String> A = graphBFS.addNode("A");
+        Node<String> C = graphBFS.addNode("C");
+        Node<String> G = graphBFS.addNode("G");
+        Node<String> X = graphBFS.addNode("X");
+        Node<String> T = graphBFS.addNode("T");
+
+        graphBFS.addEdge(1, P, A);
+        graphBFS.addEdge(1, A, C);
+        graphBFS.addEdge(1, A, G);
+        graphBFS.addEdge(1, C, G);
+        graphBFS.addEdge(1, C, X);
+        graphBFS.addEdge(1, C, T);
+        graphBFS.addEdge(1, T, G);
+
+        Iterable<Node> result = (Iterable<Node>) graphBFS.bfs(P);
+        Iterator<Node> i = result.iterator();
+
+        assertEquals(P, i.next());
+        assertEquals(A, i.next());
+        assertEquals(G, i.next());
+        assertEquals(C, i.next());
+        assertEquals(T, i.next());
+        assertEquals(X, i.next());
+
+    }
+
+
 }

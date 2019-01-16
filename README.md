@@ -18,9 +18,21 @@ Code Challenge 07 - [Linked List Kth From End](assets/challenge_readmes/ll_kth_f
 
 Code Challenge 08 - [Merged List](assets/challenge_readmes/ll_merged.md)
 
-Code: Stacks and Queues - [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
+Code Challenge 09 - [Breadth First Traversal](assets/challenge_readmes/Graphs.md)
 
-Code: Trees - [Trees](assets/challenge_readmes/Trees.md)
+Code Challenge 10 - [Alaska Airline](assets/challenge_readmes/Graphs.md)
+
+Code Challenge 11 - [Depth First Traversal](assets/challenge_readmes/Graphs.md)
+
+Code: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
+
+Code: [Trees](assets/challenge_readmes/Trees.md)
+
+Code: [Graphs](assets/challenge_readmes/Graphs.md)
+
+Code: [HashTable](assets/challenge_readmes/Hashtables.md)
+
+
 
 
 
