@@ -18,9 +18,10 @@ public class Node<K, V> {
 
 
 
-    public V getValue() {
-        return value;
+    public String getValue() {
+        return value.toString();
     }
+
 
 
 

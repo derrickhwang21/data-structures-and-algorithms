@@ -116,26 +116,7 @@ public class Hashtable<K, V> {
         return false;
     }
 
-    /**
-     * Code Challenge - 12: Repeated_Words
-     */
-    public static String getRepeatedWords(String input){
-        // credit: Sooze for regex string with ^ carrot implementation
-        String[] words = input.split("[^A-za-z]");
-//        String headOfWords = words[0];
-        Hashtable<String, String> table = new Hashtable<String, String>();
 
 
-        for(int i = 0; i < words.length; i++){
-            if(!table.contains(words[i])){
-                table.add(words[i], words[i]);
-            }else if(table.contains(words[i])){
-                return table.find(words[i]);
-            }else{
-                return "no repeat";
-            }
-        }
-        return "no repeat";
-    }
 
 }
