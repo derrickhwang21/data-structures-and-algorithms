@@ -120,6 +120,9 @@ public class GraphTest {
 
     /**
      * Test Graph: Bread-First Search Method
+     *
+     * Testing Instruction: If running the entire test file, be sure to include @After annotation. If running only `testBFS()` please remove @After annotation to allow it to run properly individually. 
+     *
      */
     @Test
     @After
