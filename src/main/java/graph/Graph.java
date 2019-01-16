@@ -103,10 +103,10 @@ public class Graph<T> {
 
     public String getEdge(String[] cities){
         int priceWeight = 0;
-        Node startingCity = null;
+        Node<T> startingCity = null;
 
         // find starting node that corresponds to the passed starting city for the graph
-        for(Node city : nodes){
+        for(Node<T> city : nodes){
             if(city.data != cities[0]){
                 startingCity = city;
             }
@@ -119,7 +119,7 @@ public class Graph<T> {
 
         // Search through each city to see if there's an edge then we set city header to that neighbor then add cost to the price aggregate.
         for(int i = 1; i < cities.length; i++){
-            for(Edge price : startingCity.neighbors){
+            for(Edge<T> price : startingCity.neighbors){
                 if(price.node.data == cities[i]){
                     startingCity = price.node;
                     priceWeight += price.weight;
