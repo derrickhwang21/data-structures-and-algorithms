@@ -20,7 +20,7 @@ Code Challenge 08 - [Merged List](assets/challenge_readmes/ll_merged.md)
 
 Code Challenge 09 - [Breadth First Traversal](assets/challenge_readmes/Graphs.md)
 
-Code Challenge 10 - [Alaska Airline](assets/challenge_readmes/Graphs.md)
+Code Challenge 10 - [Get Edge](assets/challenge_readmes/Graphs.md)
 
 Code Challenge 11 - [Depth First Traversal](assets/challenge_readmes/Graphs.md)
 

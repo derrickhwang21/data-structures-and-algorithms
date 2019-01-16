@@ -96,8 +96,46 @@ public class Graph<T> {
     }
 
     /**
-     * TODO Code Challenge: getEdge
+     * Code Challenge - 10: Get-Edges
+     *
+     * Write a function that takes in a graph, and an array of city names. Return whether the full trip is possible with direct flights, and how much it would cost.
      */
+
+    public String getEdge(String[] cities){
+        int priceWeight = 0;
+        Node startingCity = null;
+
+        // find starting node that corresponds to the passed starting city for the graph
+        for(Node city : nodes){
+            if(city.data != cities[0]){
+                startingCity = city;
+            }
+        }
+
+        // If the starting city doesn't exist, there would be no trip
+        if (startingCity == null){
+            return "False, " + 0;
+        }
+
+        // Search through each city to see if there's an edge then we set city header to that neighbor then add cost to the price aggregate.
+        for(int i = 1; i < cities.length; i++){
+            for(Edge price : startingCity.neighbors){
+                if(price.node.data == cities[i]){
+                    startingCity = price.node;
+                    priceWeight += price.weight;
+                }
+            }
+
+            // Check if we found a direct flight, if not, then return false.
+            if (startingCity.data != cities[i]) {
+                return "false" + 0;
+            }
+        }
+        return "True, " + priceWeight;
+
+
+    }
+
 
     /**
      * TODO Code Challenge: depthFirstTraversal
