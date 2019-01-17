@@ -192,6 +192,11 @@ public class GraphTest {
         System.out.println(graphGetEdge.getEdge(FalseOneConnection));
         System.out.println(graphGetEdge.getEdge(FalseMultiConnection));
 
+        assertEquals("True, 82", graphGetEdge.getEdge(TrueOneConnection));
+        assertEquals("True, 115", graphGetEdge.getEdge(TrueMultiConnection));
+        assertEquals("False, 0", graphGetEdge.getEdge(FalseOneConnection));
+        assertEquals("False, 0", graphGetEdge.getEdge(FalseMultiConnection));
+
 
     }
 

@@ -107,7 +107,7 @@ public class Graph<T> {
 
         // find starting node that corresponds to the passed starting city for the graph
         for(Node<T> city : nodes){
-            if(city.data != cities[0]){
+            if(city.data == cities[0]){
                 startingCity = city;
             }
         }
@@ -128,7 +128,7 @@ public class Graph<T> {
 
             // Check if we found a direct flight, if not, then return false.
             if (startingCity.data != cities[i]) {
-                return "false" + 0;
+                return "False, " + 0;
             }
         }
         return "True, " + priceWeight;
