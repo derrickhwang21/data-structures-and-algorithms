@@ -14,7 +14,7 @@ Combine the key and corresponding values(if they exist) into a new data structur
 Left Join - means all the values in the first hashmap are returned, and if values exist in the "right" hashmap, they are appended to the result row. If no value exist in the right hashmap, then some flavor of NULL should be appended to the result row.
 
 ## Approach & Efficiency
-Currently developing. 
+Currently developing.
 
 
 
