@@ -111,12 +111,10 @@ public class Graph<T> {
                 startingCity = city;
             }
         }
-
         // If the starting city doesn't exist, there would be no trip
         if (startingCity == null){
             return "False, " + 0;
         }
-
         // Search through each city to see if there's an edge then we set city header to that neighbor then add cost to the price aggregate.
         for(int i = 1; i < cities.length; i++){
             for(Edge<T> price : startingCity.neighbors){
@@ -125,15 +123,12 @@ public class Graph<T> {
                     priceWeight += price.weight;
                 }
             }
-
             // Check if we found a direct flight, if not, then return false.
             if (startingCity.data != cities[i]) {
                 return "False, " + 0;
             }
         }
         return "True, " + priceWeight;
-
-
     }
 
 
