@@ -11,7 +11,7 @@ public class RepeatedWord {
      */
     public static String getRepeatedWords(String input){
     // credit: Sooze for regex string with ^ carrot implementation
-    String[] words = input.split("[^A-z]");
+    String[] words = input.toLowerCase().replaceAll("[!?,]", "").split("[^A-z]");
 
     HashSet<String> table = new HashSet<>();
         for(String word : words){
@@ -21,6 +21,6 @@ public class RepeatedWord {
                 table.add(word);
             }
         }
-            return "no repeat";
+            return "no repeating word";
     }
 }
