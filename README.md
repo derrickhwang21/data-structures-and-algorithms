@@ -24,6 +24,9 @@ Code Challenge 10 - [Get Edge](assets/challenge_readmes/Graphs.md)
 
 Code Challenge 11 - [Depth First Traversal](assets/challenge_readmes/Graphs.md)
 
+Code Challenge 12 - [Repeated Word](assets/challenge_readmes/RepeatedWord.md)
+
+
 Code: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
 
 Code: [Trees](assets/challenge_readmes/Trees.md)
