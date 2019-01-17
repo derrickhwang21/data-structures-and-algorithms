@@ -26,6 +26,8 @@ Code Challenge 11 - [Depth First Traversal](assets/challenge_readmes/Graphs.md)
 
 Code Challenge 12 - [Repeated Word](assets/challenge_readmes/RepeatedWord.md)
 
+Code Challenge 14 - [Left Join](assets/challenge_readmes/LeftJoin.md)
+
 
 Code: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
 
