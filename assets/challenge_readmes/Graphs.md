@@ -11,7 +11,28 @@ The implemented Graph class should be represented as an adjacency list, and shou
 * Size()
 
 ### Challenge: 09 - Breadth-First Search
-Implement a breadth-first traversal on a graph.
+Implement a breadth-first traversal on a graph give a graph as input and a node as the starting position as the paramter. Return a collection of nodes in the order they were visited.
+
+## Approach & Efficiency
+Approach is to first create an Iterable method that takes in the node to indicate the starting node.
+
+Before we began traversing the collection of nodes:
+
+We created a new instance of linked list to queue the instances of nodes we collect for us to store our visited nodes during the traversal.
+
+Then we would instantiate a queue linkedlist for us to enqueue and dequeue the nodes we need to visit.
+
+We begin the traversal by adding in the input node as the first node we traverse to a new hashset of visited nodes.
+
+The method will traverse the the list of queue of nodes to visit as long as it is not empty and for each element we dequeue to add to our instance of queue linked list while we search its neighbor node has matching value as the previous nodes we visited.
+
+If it doesn't we enqueue it to the nodes to visit and also the set of visited nodes.
+
+If it does, we return the linkedlist of queue for our collection nodes in bfs order.
+
+
+
+
 
 ![array_shift white board](../graphs-bfs.jpg)
 
