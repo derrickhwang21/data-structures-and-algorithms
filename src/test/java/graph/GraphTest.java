@@ -156,5 +156,49 @@ public class GraphTest {
 
     }
 
+    /**
+     *  test getEdge
+     */
+
+    @Test
+    public void testGetEdge(){
+        Graph<String> graphGetEdge = new Graph<>();
+
+        Node<String> Pandora = graphGetEdge.addNode("Pandora");
+        Node<String> Arendelle = graphGetEdge.addNode("Arendelle");
+        Node<String> Metroville = graphGetEdge.addNode("Metroville");
+        Node<String> Monstropolis = graphGetEdge.addNode("Monstropolis");
+        Node<String> Narnia = graphGetEdge.addNode("Narnia");
+        Node<String> Naboo = graphGetEdge.addNode("Naboo");
+
+        graphGetEdge.addEdge(150, Pandora, Arendelle);
+        graphGetEdge.addEdge(42, Arendelle, Monstropolis);
+        graphGetEdge.addEdge(73, Monstropolis, Naboo);
+        graphGetEdge.addEdge(250, Naboo, Narnia);
+        graphGetEdge.addEdge(37, Narnia, Metroville);
+        graphGetEdge.addEdge(82, Pandora, Metroville);
+        graphGetEdge.addEdge(105, Monstropolis, Metroville);
+        graphGetEdge.addEdge(99, Metroville, Arendelle);
+        graphGetEdge.addEdge(73, Naboo, Metroville);
+
+
+        String[] TrueOneConnection = {"Metroville", "Pandora"};
+        String[] TrueMultiConnection = {"Arendelle", "Monstropolis" , "Naboo"};
+        String[] FalseOneConnection = {"Naboo", "Pandora"};
+        String[] FalseMultiConnection = {"Narnia", "Arendelle", "Naboo"};
+
+        System.out.println(graphGetEdge.getEdge(TrueOneConnection));
+        System.out.println(graphGetEdge.getEdge(TrueMultiConnection));
+        System.out.println(graphGetEdge.getEdge(FalseOneConnection));
+        System.out.println(graphGetEdge.getEdge(FalseMultiConnection));
+
+        assertEquals("True, 82", graphGetEdge.getEdge(TrueOneConnection));
+        assertEquals("True, 115", graphGetEdge.getEdge(TrueMultiConnection));
+        assertEquals("False, 0", graphGetEdge.getEdge(FalseOneConnection));
+        assertEquals("False, 0", graphGetEdge.getEdge(FalseMultiConnection));
+
+
+    }
+
 
 }
