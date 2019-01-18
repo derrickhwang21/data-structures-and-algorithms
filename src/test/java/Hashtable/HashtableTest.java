@@ -6,15 +6,7 @@ import static org.junit.Assert.*;
 
 public class HashtableTest {
 
-    @Test
-    public void testTableLength() {
-        Hashtable testTable = new Hashtable();
-        testTable.add(1, 1);
-        testTable.add(2, 2);
 
-
-        assertTrue(testTable.getBuckets() == 16);
-    }
 
     @Test
     public void addTest() {
@@ -45,7 +37,6 @@ public class HashtableTest {
             testResizedTableMultipleNodes.add(i, i);
         }
         assertEquals("size should be 20", testResizedTableMultipleNodes.size(), 20);
-        assertEquals("length should be 32", testResizedTableMultipleNodes.getBuckets(), 32);
 
     }
 
