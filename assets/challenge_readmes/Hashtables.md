@@ -28,7 +28,7 @@ Given the key, we hash the key to identify the storage location in the Hashtable
 * `getHash`
 
 * `resize`
-Doubles the size of the table, and redistribute the key/value pairs to their proper location in the new table. We would move all the nodes in linked list in each index of the array into a new table by changing the next pointer in the node and making a pointer in the new table. 
+Doubles the size of the table, and redistribute the key/value pairs to their proper location in the new table. We would move all the nodes in linked list in each index of the array into a new table by changing the next pointer in the node and making a pointer in the new table.
 
 
 
@@ -40,4 +40,9 @@ Modifiers and Type      | Class       | Method    | Description | Big O |
 |  java.util*      |`Hashtable `  | `find(K)`   | Takes in the key and returns the value from the key value pair | Space: O(1) Time: O(1) |
 |  java.util*       |`Hashtable `  | `contains(K)`   | takes in the key and returns if the key exists in the table already |  Space: O(1) Time: O(1)
 |  java.util*       |`Hashtable `  | `getHash(K)`   | Takes in a key and returns the index in the array the key is stored |  Space: O(1) Time: O(1)|
+
+## Credit:
+Fundamentals of Hash Functions: Tara Johnson, Vinicio Sanchez, Michelle Ferreirae
+
+Hash Functions: "Effective Java - 3rd Edition (Joshua Bloch)" , http://www.cs.princeton.edu/courses/archive/spring07/cos226/lectures/10Hashing.pdf, https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/hashing.html, https://algs4.cs.princeton.edu/34hash/,
 
