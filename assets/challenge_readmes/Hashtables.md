@@ -26,6 +26,9 @@ Given the key, we hash the key to identify the storage location in the Hashtable
 Given the key, we hash the key to identify the storage location in the Hashtable array. If the specified key is in the node that the list points to, we return true and move to the next node in the list to look if not. If the key can't be found traversing the key, we return the value to be false.
 
 * `getHash`
+Implemented our Hashtable defined .hashCode() method by combining a field using (31 * x ) + y rule, where x is the current initial prime number and y is the hashed value of the particular data type.
+
+Then we use modular hashing converting the code to an array index between 0 and M -1, since hashCode() returns a value between -2^31 and (2^31 -1). We get a positive hash value by changing the most significant bit to zero where `0x7ffffff` equals to 2^31 - 1 which has a binary representation(if not already), then modulo the length of the table array.
 
 * `resize`
 Doubles the size of the table, and redistribute the key/value pairs to their proper location in the new table. We would move all the nodes in linked list in each index of the array into a new table by changing the next pointer in the node and making a pointer in the new table.
@@ -44,5 +47,10 @@ Modifiers and Type      | Class       | Method    | Description | Big O |
 ## Credit:
 Fundamentals of Hash Functions: Tara Johnson, Vinicio Sanchez, Michelle Ferreirae
 
-Hash Functions: "Effective Java - 3rd Edition (Joshua Bloch)" , http://www.cs.princeton.edu/courses/archive/spring07/cos226/lectures/10Hashing.pdf, https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/hashing.html, https://algs4.cs.princeton.edu/34hash/,
+Hash Functions: "Effective Java - 3rd Edition (Joshua Bloch)" ,
+[Hashing Concept - Collision](http://www.cs.princeton.edu/courses/archive/spring07/cos226/lectures/10Hashing.pdf),
+[Hashing Concept](https://www.cs.cmu.edu/~adamchik/15-121/lectures/Hashing/hashing.html),
+[Quadratic Probing](https://algs4.cs.princeton.edu/34hash/),
+[Linear Probing](https://stackoverflow.com/questions/24433184/overriding-hashcode-with-a-class-with-two-generics-fields),
+[Linear Probing](http://www.cs.rmit.edu.au/online/blackboard/chapter/05/documents/contribute/chapter/05/linear-probing.html)
 

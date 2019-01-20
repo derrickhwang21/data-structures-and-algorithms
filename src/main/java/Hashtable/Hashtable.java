@@ -10,10 +10,10 @@ import java.util.List;
 
 public class Hashtable<K, V> {
 
-//    protected ArrayList<Node<K, V>> table;
     protected Node<K, V>[] table;
     private int count;
     protected List<K> keys;
+
 
     // current size of array list
     private int size;
@@ -30,18 +30,22 @@ public class Hashtable<K, V> {
 
     public boolean isEmpty(){return size() == 0;}
 
+
     /**
+     * Modular Hashing- converting using our defined `hashCode()` to an array index between 0 and M-1, since the @Override hashCode() returns a value between -2^31 and (2^31 - 1).
+     *
+     * Get a positive hash value by changing the most significant bit to zero (if not already), then modulo array length.
+     *
+     * See - Hash table node class to reference @Override hashCode().
+     *
      * returns the index in the array the key is stored.
-     * @param key
-     * @return
+     * @return key
      */
-
     public int getHash(K key){
-
-        return (Math.abs(key.hashCode())) % table.length;
-
+        return (key.hashCode() & 0x7fffffff) % table.length;
 
     }
+
 
     /**
      * takes in parameters to hash the key and add the key and value pair to the table, in addition to resizing the table based on load factor
