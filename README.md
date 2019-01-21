@@ -37,6 +37,8 @@ Code: [Graphs](assets/challenge_readmes/Graphs.md)
 
 Code: [HashTable](assets/challenge_readmes/Hashtables.md)
 
+Code: [Insertion Sort](assets/challenge_readmes/InsertionSort.md)
+
 
 
 
