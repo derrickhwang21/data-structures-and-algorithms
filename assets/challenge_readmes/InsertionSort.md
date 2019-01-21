@@ -21,5 +21,5 @@ While the key is less than the value of index j and greater than position 0, the
 ## API
 Modifiers and Type      | Class       | Method    | Description | Big O |
 |---                    | ---         | ---     |         --- | --- |
-|  java.util*      |`Graph `  | `addNode()`   | Adds a new node to the graph then takes in the value of that node to return the added nodes | Space: O(1) Time: O(n*2)|
+|  java.util*      |`Graph `  | `addNode()`   | takes in an unsorted array and returns the array sorted using insertion sort | Space: O(1) Time: O(n*2)|
 
