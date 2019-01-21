@@ -1,14 +1,14 @@
 package Hashtable;
 
-public class Node<K, V> {
-    protected K key;
+public class Node<V> {
+    protected String key;
     protected V value;
-    Node<K, V> next;
+    Node next;
 
-    Node(K key, V value, Node<K, V> next){
+    Node(String key, V value){
         this.key = key;
         this.value = value;
-        this.next = next;
+        this.next = null;
     }
 
     Node(){}
@@ -24,15 +24,6 @@ public class Node<K, V> {
         return result;
     }
 
-    public K getKey() {
-        return key;
-    }
-
-
-
-    public V getValue() {
-        return value;
-    }
 
 
 

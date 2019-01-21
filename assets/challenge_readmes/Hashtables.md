@@ -26,9 +26,14 @@ Given the key, we hash the key to identify the storage location in the Hashtable
 Given the key, we hash the key to identify the storage location in the Hashtable array. If the specified key is in the node that the list points to, we return true and move to the next node in the list to look if not. If the key can't be found traversing the key, we return the value to be false.
 
 * `getHash`
+
+##### Hashcode Implementation
 Implemented our Hashtable defined .hashCode() method by combining a field using (31 * x ) + y rule, where x is the current initial prime number and y is the hashed value of the particular data type.
 
 Then we use modular hashing converting the code to an array index between 0 and M -1, since hashCode() returns a value between -2^31 and (2^31 -1). We get a positive hash value by changing the most significant bit to zero where `0x7ffffff` equals to 2^31 - 1 which has a binary representation(if not already), then modulo the length of the table array.
+
+##### getHash
+Current implementation uses a positive hash value by iterating through the character string key input, then modulo the value by the array length.
 
 * `resize`
 Doubles the size of the table, and redistribute the key/value pairs to their proper location in the new table. We would move all the nodes in linked list in each index of the array into a new table by changing the next pointer in the node and making a pointer in the new table.
@@ -42,7 +47,7 @@ Modifiers and Type      | Class       | Method    | Description | Big O |
 |  java.util*      |`Hashtable `  | `add(K, V)`   | Takes in a key and value, which will hash the key and add the key and value pair to the table. Resizes the table if the load factor becomes greater than 0.7 | Space: O(1) Time: O(1)|
 |  java.util*      |`Hashtable `  | `find(K)`   | Takes in the key and returns the value from the key value pair | Space: O(1) Time: O(1) |
 |  java.util*       |`Hashtable `  | `contains(K)`   | takes in the key and returns if the key exists in the table already |  Space: O(1) Time: O(1)
-|  java.util*       |`Hashtable `  | `getHash(K)`   | Takes in a key and returns the index in the array the key is stored |  Space: O(1) Time: O(1)|
+|  java.util*       |`Hashtable `  | `getHash(K)`   | Takes in a key and returns the index in the array the key is stored |  Space: O(1) Time: O(n)|
 
 ## Credit:
 Fundamentals of Hash Functions: Tara Johnson, Vinicio Sanchez, Michelle Ferreirae
