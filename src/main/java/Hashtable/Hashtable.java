@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
+
 public class Hashtable<K, V> {
 
-    protected Node<K, V>[] table;
+    protected Node[] table;
     private int count;
-    protected List<K> keys;
+
 
 
     // current size of array list
@@ -32,17 +34,19 @@ public class Hashtable<K, V> {
 
 
     /**
-     * Modular Hashing- converting using our defined `hashCode()` to an array index between 0 and M-1, since the @Override hashCode() returns a value between -2^31 and (2^31 - 1).
      *
-     * Get a positive hash value by changing the most significant bit to zero (if not already), then modulo array length.
-     *
-     * See - Hash table node class to reference @Override hashCode().
+     * Get a positive hash value by iterating through the character string key input, then modulo array length.
      *
      * returns the index in the array the key is stored.
      * @return key
      */
-    public int getHash(K key){
-        return (key.hashCode() & 0x7fffffff) % table.length;
+    public int getHash(String key){
+        int hash = 0;
+        for (int i = 0; i < key.length(); i++) {
+            hash += key.codePointAt(i);
+        }
+        hash = hash * 17 % table.length;
+        return hash;
 
     }
 
@@ -51,10 +55,10 @@ public class Hashtable<K, V> {
      * takes in parameters to hash the key and add the key and value pair to the table, in addition to resizing the table based on load factor
      * @param key
      */
-    public void add(K key, V value) {
+    public void add(String key, V value) {
 
         int bucketIndex = getHash(key);
-        Node<K, V> current = table[bucketIndex];
+        Node current = table[bucketIndex];
 
         while (current != null) {
             if (current.key.equals(key))
@@ -78,32 +82,16 @@ public class Hashtable<K, V> {
 
 
     }
-//    public V add(K key, V value){
-//        int hash = getHash(key);
-//
-//        for(Node<K,V> node = table[hash]; node != null; node = node.next){
-//            if(key.equals(node.key)){
-//                V oldValue = node.value;
-//                node.value = value;
-//                return oldValue;
-//            }
-//        }
-//
-//        Node<K, V> node = new Node<K,V>(key, value, table[hash], hash);
-//        table[hash] = node;
-//
-//        return null;
-//
-//    }
+
 
     /**
      * A method that takes in a key and returns the value from key/value pair
      * @param key
      * @return
      */
-    public V find(K key) {
+    public Object find(String key) {
         int bucketIndex = getHash(key);
-        Node<K, V> current = table[bucketIndex];
+        Node current = table[bucketIndex];
 
         while (current != null) {
             if (current.key.equals(key))
@@ -118,9 +106,9 @@ public class Hashtable<K, V> {
      * @param key
      * @return
      */
-    public boolean contains(K key){
+    public boolean contains(String key){
         int bucketIndex = getHash(key);
-        Node<K, V> current = table[bucketIndex];
+        Node current = table[bucketIndex];
 
         while (current != null) {
             if (current.key.equals(key))
@@ -130,8 +118,7 @@ public class Hashtable<K, V> {
         return false;
     }
 
-    private void resize() {
-
+    private void resize(){
 
         Node[] newtable = new Node[table.length*2];
         for (int i = 0; i < table.length; i++) {
@@ -139,7 +126,7 @@ public class Hashtable<K, V> {
             Node node = table[i];
             while (node != null) {
                 Node next = node.next;
-                int hash = (Math.abs(node.key.hashCode())) % newtable.length;
+                int hash = getHash(node.key);
                 node.next = newtable[hash];
                 newtable[hash] = node;
                 node = next;
