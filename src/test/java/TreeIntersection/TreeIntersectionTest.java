@@ -75,6 +75,6 @@ public class TreeIntersectionTest {
 
         List result = treeIntersection(testBinaryTree, testBinaryTree2);
 
-        assertEquals("Expected: [6, 4, 3, 5, 8, 7, 9]" ,expected, result);
+        assertEquals("Expected: [6, 4, 3, 5, 8, 7, 9]" ,expected,result);
     }
 }
