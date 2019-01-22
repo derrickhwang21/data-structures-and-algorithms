@@ -1,9 +1,9 @@
-# Insertion Sort
+# Merge Sort Sort
 CodeFellows - 401 - Java
-CODE: Implement Insertion Sort
+Code Challenge - 15: Merge Sort
 
 ### Challenge: Code - Insertion Sort
-The implemented InsertionSort class which takes in an unsorted array and returns the array sorted using insertion sort.
+Write a function that accepts an array of unsorted integers, and returns a sorted array by a recursive mergesort algorithm.
 
 
 ## Approach & Efficiency
@@ -21,5 +21,4 @@ While the key is less than the value of index j and greater than position 0, the
 ## API
 Modifiers and Type      | Class       | Method    | Description | Big O |
 |---                    | ---         | ---     |         --- | --- |
-|  java.util*      |`InsertionSort `  | `insertionSort()`   | takes in an unsorted array and returns the array sorted using insertion sort | Space: O(1) Time: O(n*2)|
-
+|  java.util*      |`Graph `  | `addNode()`   | takes in an unsorted array and returns the array sorted using insertion sort | Space: O(1) Time: O(n*2)|
