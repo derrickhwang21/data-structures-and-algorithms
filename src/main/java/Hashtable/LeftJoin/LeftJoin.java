@@ -10,7 +10,7 @@ public class LeftJoin {
 
     public static String[][] leftJoin(HashMap<String, String> synonymMap, HashMap<String, String> antonymMap){
         List<String> keys = new ArrayList<>(synonymMap.keySet());
-        
+
         String[][]result = new String[keys.size()][3];
         for(int i  = 0; i < keys.size(); i++) {
             String key = keys.get(i);

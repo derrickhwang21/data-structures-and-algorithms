@@ -69,6 +69,48 @@ public class LeftJoinTest {
 
         assertArrayEquals("must be the same", expected, results);
 
+    }
+
+    @Test
+    public void leftJoinTestWithNoValueKeys() {
+
+        HashMap<String, String> synonyms = new HashMap<String, String>();
+        HashMap<String, String> antonyms = new HashMap<String, String>();
+
+        synonyms.put("fond", "");
+        synonyms.put("wrath", "");
+        synonyms.put("diligent", "employed");
+        antonyms.put("fondue", "averse");
+        antonyms.put("wrathful", "");
+        antonyms.put("diligently", "");
+
+        String[][] results = leftJoin(synonyms, antonyms);
+        String[][] expected = new String[][]{{"fond", "", null}, {"wrath", "", null}, {"diligent", "employed", null}};
+
+        assertArrayEquals("must be the same", expected, results);
 
     }
+
+    @Test
+    public void leftJoinTestWithNokeys() {
+
+        HashMap<String, String> synonyms = new HashMap<String, String>();
+        HashMap<String, String> antonyms = new HashMap<String, String>();
+
+        synonyms.put("", "enamored");
+        synonyms.put("", "anger");
+        synonyms.put("", "employed");
+        antonyms.put("", "averse");
+        antonyms.put("", "delight");
+        antonyms.put("", "idle");
+
+        String[][] results = leftJoin(synonyms, antonyms);
+        String[][] expected = new String[][]{{"", "employed", "idle"}};
+
+        assertArrayEquals("must be the same", expected, results);
+
+    }
+
+
+
 }
