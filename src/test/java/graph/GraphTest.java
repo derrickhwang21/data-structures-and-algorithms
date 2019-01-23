@@ -200,5 +200,37 @@ public class GraphTest {
 
     }
 
+    @Test
+    public void testDepthFirst() {
+        Graph<String> graphDepthFirst = new Graph<>();
+
+        Node<String> P = graphDepthFirst.addNode("P");
+        Node<String> A = graphDepthFirst.addNode("A");
+        Node<String> C = graphDepthFirst.addNode("C");
+        Node<String> G = graphDepthFirst.addNode("G");
+        Node<String> X = graphDepthFirst.addNode("X");
+        Node<String> T = graphDepthFirst.addNode("T");
+
+        graphDepthFirst.addEdge(1, P, A);
+        graphDepthFirst.addEdge(1, A, C);
+        graphDepthFirst.addEdge(1, A, G);
+        graphDepthFirst.addEdge(1, C, G);
+        graphDepthFirst.addEdge(1, C, X);
+        graphDepthFirst.addEdge(1, C, T);
+        graphDepthFirst.addEdge(1, T, G);
+
+        Iterable<Node> result = (Iterable<Node>) graphDepthFirst.depthFirst(P);
+        Iterator<Node> i = result.iterator();
+
+        assertEquals(P, i.next());
+        assertEquals(A, i.next());
+        assertEquals(G, i.next());
+        assertEquals(T, i.next());
+        assertEquals(C, i.next());
+        assertEquals(X, i.next());
+
+    }
+
+
 
 }

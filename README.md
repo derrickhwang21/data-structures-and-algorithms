@@ -28,6 +28,9 @@ Code Challenge 12 - [Repeated Word](assets/challenge_readmes/RepeatedWord.md)
 
 Code Challenge 14 - [Left Join](assets/challenge_readmes/LeftJoin.md)
 
+Code Challenge 15 - [Merge Sort](assets/challenge_readmes/MergeSort.md)
+
+
 
 Code: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
 
@@ -36,6 +39,8 @@ Code: [Trees](assets/challenge_readmes/Trees.md)
 Code: [Graphs](assets/challenge_readmes/Graphs.md)
 
 Code: [HashTable](assets/challenge_readmes/Hashtables.md)
+
+Code: [Insertion Sort](assets/challenge_readmes/InsertionSort.md)
 
 
 

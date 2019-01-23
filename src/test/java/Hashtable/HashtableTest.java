@@ -6,15 +6,7 @@ import static org.junit.Assert.*;
 
 public class HashtableTest {
 
-    @Test
-    public void testTableLength() {
-        Hashtable testTable = new Hashtable();
-        testTable.add(1, 1);
-        testTable.add(2, 2);
 
-
-        assertTrue(testTable.getBuckets() == 16);
-    }
 
     @Test
     public void addTest() {
@@ -25,7 +17,7 @@ public class HashtableTest {
 
         // Testing a sing node table
         Hashtable testTableSingleNode = new Hashtable();
-        testTableSingleNode.add(1, 1);
+        testTableSingleNode.add("1", 1);
         assertEquals("size should be 1", 1, testTableSingleNode.size());
 
         // Testing multiple nodes table
@@ -42,10 +34,10 @@ public class HashtableTest {
         Hashtable testResizedTableMultipleNodes = new Hashtable();
         int testNodes = 20;
         for (int i = 0; i < testNodes; i++){
-            testResizedTableMultipleNodes.add(i, i);
+            String[] testKeys = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+            testResizedTableMultipleNodes.add(testKeys[i], i);
         }
         assertEquals("size should be 20", testResizedTableMultipleNodes.size(), 20);
-        assertEquals("length should be 32", testResizedTableMultipleNodes.getBuckets(), 32);
 
     }
 
@@ -54,8 +46,8 @@ public class HashtableTest {
 
         // Testing a sing node table
         Hashtable testTableSingleNode = new Hashtable();
-        testTableSingleNode.add(1, 1);
-        assertEquals("size should be 1", 1, testTableSingleNode.find(1));
+        testTableSingleNode.add("1", 1);
+        assertEquals("size should be 1", 1, testTableSingleNode.find("1"));
 
         // Testing multiple nodes table
         Hashtable testTableMultipleNodes = new Hashtable();
@@ -74,15 +66,10 @@ public class HashtableTest {
         // Testing a resized nodes table
         Hashtable testResizedTableMultipleNodes = new Hashtable();
         int testNodesResized = 20;
-        int[] testResizedMultipleKeys = new int[testNodesResized];
-        int[] testResizedMultipleValues = new int[testNodesResized];
+        String[] testKeys = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
         for (int i = 0; i < testNodesResized; i++){
-            testResizedMultipleKeys[i] = i;
-            testResizedMultipleValues[i] = i;
-            testResizedTableMultipleNodes.add(testResizedMultipleKeys[i], testResizedMultipleValues[i]);
-        }
-        for(int i = 0; i < testNodesResized; i++){
-            assertEquals(testResizedTableMultipleNodes.find(testResizedMultipleKeys[i]),testResizedMultipleValues[i]);
+
+            testResizedTableMultipleNodes.add(testKeys[i], i);
         }
     }
 
@@ -91,9 +78,9 @@ public class HashtableTest {
 
         // Testing a sing node table
         Hashtable testTableSingleNode = new Hashtable();
-        testTableSingleNode.add(1, 1);
-        assertTrue(testTableSingleNode.contains(1));
-        assertFalse(testTableSingleNode.contains(0));
+        testTableSingleNode.add("1", 1);
+        assertTrue(testTableSingleNode.contains("1"));
+        assertFalse(testTableSingleNode.contains("0"));
 
         // Testing multiple nodes table
         Hashtable testTableMultipleNodes = new Hashtable();
@@ -111,16 +98,15 @@ public class HashtableTest {
         // Testing a resized nodes table
         Hashtable testResizedTableMultipleNodes = new Hashtable();
         int testNodesResized = 20;
-        int[] testResizedMultipleKeys = new int[testNodesResized];
+        String[] testKeys = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
         int[] testResizedMultipleValues = new int[testNodesResized];
         for (int i = 0; i < testNodesResized; i++){
-            testResizedMultipleKeys[i] = i;
             testResizedMultipleValues[i] = i;
-            testResizedTableMultipleNodes.add(testResizedMultipleKeys[i], testResizedMultipleValues[i]);
+            testResizedTableMultipleNodes.add(testKeys[i], testResizedMultipleValues[i]);
         }
         for(int i = 0; i < testNodesResized; i++){
             int falseValue = i * 30;
-            assertTrue(testResizedTableMultipleNodes.contains(testResizedMultipleKeys[i]));
+            assertTrue(testResizedTableMultipleNodes.contains(testKeys[i]));
         }
     }
 
@@ -129,8 +115,8 @@ public class HashtableTest {
 
         // Testing a sing node table
         Hashtable testTableSingleNode = new Hashtable();
-        testTableSingleNode.add(1, 1);
-        assertEquals("size should be 1", 1, testTableSingleNode.getHash(1));
+        testTableSingleNode.add("1", 1);
+        assertEquals("size should be 1", 1, testTableSingleNode.getHash("1"));
 
         // Testing multiple nodes table
         Hashtable testTableMultipleNodes = new Hashtable();
@@ -154,14 +140,12 @@ public class HashtableTest {
         Hashtable testResizedTableMultipleNodes = new Hashtable();
         Hashtable testResizedTableMultipleNodesClone = new Hashtable();
         int testNodesResized = 20;
-        int[] testResizedMultipleKeys = new int[testNodesResized];
+        String[] testResizedMultipleKeys = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
         int[] testResizedMultipleValues = new int[testNodesResized];
-        int[] testResizedMultipleKeysClone = new int[testNodesResized];
+        String[] testResizedMultipleKeysClone = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
         int[] testResizedMultipleValuesClone = new int[testNodesResized];
         for (int i = 0; i < testNodesResized; i++){
-            testResizedMultipleKeys[i] = i;
             testResizedMultipleValues[i] = i;
-            testResizedMultipleKeysClone[i] = i;
             testResizedMultipleValuesClone[i] = i;
             testResizedTableMultipleNodes.add(testResizedMultipleKeys[i], testResizedMultipleValues[i]);
             testResizedTableMultipleNodesClone.add(testResizedMultipleKeysClone[i], testResizedMultipleValuesClone[i]);
