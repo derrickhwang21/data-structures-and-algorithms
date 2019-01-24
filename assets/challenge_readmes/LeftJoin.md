@@ -14,12 +14,15 @@ Combine the key and corresponding values(if they exist) into a new data structur
 Left Join - means all the values in the first hashmap are returned, and if values exist in the "right" hashmap, they are appended to the result row. If no value exist in the right hashmap, then some flavor of NULL should be appended to the result row.
 
 ## Approach & Efficiency
-Currently developing. 
 
+We will instantiate a new string 2d array. wWhere the inner loop is the size of three for the matching key and their respective values. While the outer loop will be the size of the arraylist that contains the keyset of the hashmap that contains the synonyms.
 
+Using that arraylist of keys we will iterate throught the list to place each inner loop with their respective key and synonym value. At which point we will also check if the key exists in the antonym map and return value if exist, or null, if it doesn't.
+
+![Left Join](../LeftJoin.jpg)
 
 
 ## API
 Modifiers and Type      | Class       | Method    | Description | Big O |
 |---                    | ---         | ---     |         --- | --- |
-|  java.util*      |`RepeatedWord `  | `getRepeatedWord(String input)`   | Take in a string and return the first repeated word in the string or false if word doesn't exist | Space: O(n) Time: O(n)|
+|  java.util*      |`Hashtable.LeftJoin `  | `leftJoin(Hashmap<String, String>, Hashmap<String, String)`   | Take in two hashmap with string keys and values and return the left join, if the key for the right hashmap doesn't exist, then the return value will be nuk | Space: O(n) Time: O(n)|
