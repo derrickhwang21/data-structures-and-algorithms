@@ -32,6 +32,8 @@ Code Challenge 15 - [Merge Sort](assets/challenge_readmes/MergeSort.md)
 
 Code Challenge 16 - [Quick Sort](assets/challenge_readmes/QuickSort.md)
 
+Code Challenge 17 - [Radix Sort](assets/challenge_readmes/RadixSort.md)
+
 
 
 Code: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
