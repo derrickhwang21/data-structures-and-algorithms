@@ -15,7 +15,7 @@ Left Join - means all the values in the first Hashmap are returned, and if value
 
 ## Approach & Efficiency
 
-We will instantiate a new string 2d array. wWhere the inner loop is the size of three for the matching key and their respective values. While the outer loop will be the size of the array-list that contains the key-set of the Hashmap that contains the synonyms.
+We will instantiate a new string 2d array. Where the inner loop is the size of three for the matching key and their respective values. While the outer loop will be the size of the array-list that contains the key-set of the Hashmap that contains the synonyms.
 
 Using that array-list of keys we will iterate through the list to place each inner loop with their respective key and synonym value. At which point we will also check if the key exists in the antonym map and return value if exist, or null, if it doesn't.
 
