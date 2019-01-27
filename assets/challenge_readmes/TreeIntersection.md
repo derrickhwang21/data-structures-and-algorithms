@@ -18,4 +18,4 @@ We will then iterate through the first set of Nodes checking against the second 
 ## API
 Modifiers and Type      | Class       | Method    | Description | Big O |
 |---                    | ---         | ---     |         --- | --- |
-|  java.util*      |`treeIntersection `  | `leftJoin(Hashmap<String, String>, Hashmap<String, String)`   | Take in two binarty trees and return the common values in both the trees | Space: O(n) Time: O(n)|
+|  java.util*      |`treeIntersection `  | `treeIntersection(BinaryTree, BinaryTree)`   | Take in two binarty trees and return the common values in both the trees | Space: O(n) Time: O(n)|
