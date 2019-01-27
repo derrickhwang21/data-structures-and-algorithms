@@ -1,5 +1,4 @@
-#
-CodeFellows - 401 - Java
+# CodeFellows - 401 - Java
 Code Challenge - Implement a simplified Left Join for 2 Hashmaps
 
 ### Challenge: Code - HashTable

@@ -1,15 +1,6 @@
 package Hashtable;
 
 
-import jdk.nashorn.internal.ir.ReturnNode;
-
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
-
 public class Hashtable<K, V> {
 
     protected Node[] table;
