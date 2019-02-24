@@ -4,6 +4,8 @@ Challenge 02: Data & Algorithm Challenge
 ## Challenge
 Write a function called `insertShiftArray` which takes in an array and the value to be added. Without utilizing any of the built-in methods available to java, return an array with the new value added at the middle index.
 
+Write a function calle `removeShiftArray` which deletes the middle index element and shifts the element to fill the gap of the removed element to fill in the new gap.
+
 
 [View the code](../../src/main/java/ArrayShift/ArrayShift.java) | [View the test](../../src/test/ArrayShift/ArrayShiftTest.java)
 ## Example Input/Output
