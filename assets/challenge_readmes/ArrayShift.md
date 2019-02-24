@@ -9,10 +9,18 @@ Write a function calle `removeShiftArray` which deletes the middle index element
 
 [View the code](../../src/main/java/ArrayShift/ArrayShift.java) | [View the test](../../src/test/ArrayShift/ArrayShiftTest.java)
 ## Example Input/Output
+
+#### insertShiftArray
 |Input  |Output |
 |---	|---	|
 |[2,4,6,8], 5  	| [2,4,5,6,8]  	|
 |[4,8,15,23,42], 16 | [4,8,15,16,23,42]  |
+
+#### removeShiftArray
+|Input  |Output |
+|---	|---	|
+|[2,4,5,6,8]  	| [2,4,6,8]  	|
+|[4,8,15,16,23,42] | [4,8,15,23,42]  |
 
 
 ## Approach & Efficiency
