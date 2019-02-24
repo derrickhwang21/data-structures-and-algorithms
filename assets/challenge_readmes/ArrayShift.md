@@ -48,6 +48,6 @@ Efficiency for both:
 
 Space: O(n) | Time: O(n)
 
-## Intial WhiteBoard Solution
+## Initial WhiteBoard Solution
 <!-- Embedded whiteboard image -->
 ![array_shift white board](../array_shift.jpg)
