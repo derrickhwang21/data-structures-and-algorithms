@@ -7,7 +7,7 @@ Write a function called `insertShiftArray` which takes in an array and the value
 Write a function calle `removeShiftArray` which deletes the middle index element and shifts the element to fill the gap of the removed element to fill in the new gap.
 
 
-[View the code](../../src/main/java/ArrayShift/ArrayShift.java) | [View the test](../../src/test/ArrayShift/ArrayShiftTest.java)
+[View the code](../../src/main/java/ArrayShift/ArrayShift.java) | [View the test](../../src/test/java/ArrayShift/ArrayShiftTest.java)
 ## Example Input/Output
 
 #### insertShiftArray
