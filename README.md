@@ -1,5 +1,5 @@
 # data-structures-and-algorithms
-Collection of daily code challenges for Codefellows 401 - Java
+Collection of daily code challenges from Codefellows 401 - Java
 
 ## Challenge
 Code Challenge 01 - [Reverse an Array](assets/challenge_readmes/ArrayReverse.md)

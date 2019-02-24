@@ -2,9 +2,23 @@
 CodeFellows - 401 - Java
 Code Challenge 01: Data & Algorithm Challenge
 ## Challenge
-Write a function called reverseArray which takes an array as an argument. Without utilizing any of the built-in methods available to java, return an array with elements in reversed order.
+Write a function called reverseArray which takes an array of integers as an argument. Without utilizing any of the built-in methods available to java, return an array with the elements in reversed order.
+
+[View the code](../../src/main/java/ArrayReverse.java) | [View the test](../../src/test/ArrayReverseTest.java)
+## Example Input/Output
+|Input  |Output |
+|---	|---	|
+|[1, 2, 3, 4, 5, 6]   	| [6, 5, 4, 3, 2, 1]  	|
+|[89, 2354, 3546, 23, 10, -923, 823, -12]|[-12, 823, -923, 10, 23, 3546, 2354, 89]   	|
+
+
 ## Approach & Efficiency
-Using the binary search method, I referenced the middle element of the input array by dividing the length of the array bt half. From which point using conditional statement to compare the middle element with the key input value to return its value if it matched. If the key input value is less than the middle element, the search contines in the lower half of the array. If the key input value is grater than the middle element, the search contines in the upper half of the array. By doing this, the algorithm eliminates the half in which the target value cannot lie in each iteration and returning -1 if middle element never matched to key input value.
+
+Writing a static method taking in an array of integers. First instantiating a new array instance as a holder for the reversed array by finding the length.
+
+Then for each index of the new array and for each index we iterate through each of the input array by its length - 1 for the last index of the input array by the iteration.
+
+As a result, we return the array new instance of the reversed array.
 ## Solution
 <!-- Embedded whiteboard image -->
-![BinarySearch White Board](https://photos.app.goo.gl/mtSgNgWdGEsSsiV18)
+![BinarySearch White Board](../reverse_an_array.jpg)
