@@ -1,6 +1,5 @@
 package ArrayShift;
 
-import java.util.Arrays;
 
 
 public class ArrayShift{
