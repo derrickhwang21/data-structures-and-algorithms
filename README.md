@@ -4,7 +4,7 @@ Collection of daily code challenges from Codefellows 401 - Java
 ## Challenge
 Code Challenge 01 - [Reverse an Array](assets/challenge_readmes/ArrayReverse.md)
 
-Code Challenge 02 - [Insert and shift an array in middle at index](assets/challenge_readmes/ArrayShift.md)
+Code Challenge 02 - [Insert and shift array](assets/challenge_readmes/ArrayShift.md)
 
 Code Challenge 03 - [Binary search in a sorted 1D array](assets/challenge_readmes/BinarySearch.md)
 

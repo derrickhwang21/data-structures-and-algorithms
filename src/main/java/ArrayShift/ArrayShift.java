@@ -1,15 +1,9 @@
+package ArrayShift;
+
 import java.util.Arrays;
 
 
 public class ArrayShift{
-    public static void main (String[] args){
-
-        int[] testArray1 = {1,2,3,4,5,6};
-        int[] testArray2 = {1,2,3,5,24};
-        int[] testArray3 = {12,4,5,6};
-
-    }
-
     public static int[] insertShiftArray (int[] originalArray, int inputValue){
         int[] newArray = new int[originalArray.length + 1];
         int midpointIndex = (originalArray.length % 2 == 0 ? originalArray.length / 2 : (originalArray.length + 1) / 2);
@@ -29,17 +23,22 @@ public class ArrayShift{
     }
 
     public static int[] removeShiftArray (int[] originalArray){
-        int[] middlelessArray = new int[originalArray.length - 1];
-        int midpointIndex = (originalArray.length % 2 == 0 ? originalArray.length / 2 : (originalArray.length + 1) / 2);
 
-        for (int i = 0; i < middlelessArray.length; i++){
-            if (i < midpointIndex) {
-                middlelessArray[i] = originalArray[i];
+
+        if (originalArray.length < 2){
+            return originalArray;
+        }else {
+            int[] middlelessArray = new int[originalArray.length - 1];
+            int midpointIndex = (originalArray.length % 2 == 0 ? originalArray.length / 2 : (originalArray.length + 1) / 2);
+            for (int i = 0; i < middlelessArray.length; i++) {
+                if (i < midpointIndex) {
+                    middlelessArray[i] = originalArray[i];
+                } else {
+                    middlelessArray[i] = originalArray[i + 1];
+                }
             }
-            else {
-                middlelessArray[i] = originalArray[i + 1];
-            }
+            return middlelessArray;
         }
-        return middlelessArray;
+
     }
 }

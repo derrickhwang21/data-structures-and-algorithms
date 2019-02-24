@@ -4,7 +4,7 @@ Code Challenge 01: Data & Algorithm Challenge
 ## Challenge
 Write a function called reverseArray which takes an array of integers as an argument. Without utilizing any of the built-in methods available to java, return an array with the elements in reversed order.
 
-[View the code](../../src/main/java/ArrayReverse.java) | [View the test](../../src/test/ArrayReverseTest.java)
+[View the code](../../src/main/java/ArrayReverse/ArrayReverse.java) | [View the test](../../src/test/ArrayReverse/ArrayReverseTest.java)
 ## Example Input/Output
 |Input  |Output |
 |---	|---	|

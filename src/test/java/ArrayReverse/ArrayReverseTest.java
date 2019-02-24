@@ -1,3 +1,6 @@
+package ArrayReverse;
+
+import ArrayReverse.ArrayReverse;
 import org.junit.Test;
 import java.util.Arrays;
 import static junit.framework.TestCase.assertEquals;
