@@ -1,5 +1,5 @@
 # data-structures-and-algorithms
-Collection of daily code challenges from Codefellows 401 - Java
+Collection of daily code challenges from Codefellows 401 & miscellaneous sources - Java
 
 ## Challenge
 Code Challenge 01 - [Reverse an array](assets/challenge_readmes/ArrayReverse.md)
@@ -36,17 +36,19 @@ Code Challenge 16 - [Quick Sort](assets/challenge_readmes/QuickSort.md)
 
 Code Challenge 17 - [Radix Sort](assets/challenge_readmes/RadixSort.md)
 
+Code Challenge 18 - [CCI - 1.1](assets/challenge_readmes/cci-1_1.md)
 
 
-Code: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
 
-Code: [Trees](assets/challenge_readmes/Trees.md)
+Code Implementation: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)
 
-Code: [Graphs](assets/challenge_readmes/Graphs.md)
+Code Implementation: [Trees](assets/challenge_readmes/Trees.md)
 
-Code: [HashTable](assets/challenge_readmes/Hashtables.md)
+Code Implementation: [Graphs](assets/challenge_readmes/Graphs.md)
 
-Code: [Insertion Sort](assets/challenge_readmes/InsertionSort.md)
+Code Implementation: [HashTable](assets/challenge_readmes/Hashtables.md)
+
+Code Implementation: [Insertion Sort](assets/challenge_readmes/InsertionSort.md)
 
 
 
