@@ -38,6 +38,9 @@ Code Challenge 17 - [Radix Sort](assets/challenge_readmes/RadixSort.md)
 
 Code Challenge 18 - [CCI - 1.1](assets/challenge_readmes/cci-1_1.md)
 
+Code Challenge 19 - [CCI - 1.3](assets/challenge_readmes/cci-1_3.md)
+
+
 
 
 Code Implementation: [Stack And Queue](assets/challenge_readmes/stack_and_queue.md)

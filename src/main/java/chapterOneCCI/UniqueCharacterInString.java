@@ -1,4 +1,4 @@
-package uniqueCharactersInString;
+package chapterOneCCI;
 
 public class UniqueCharacterInString {
 
