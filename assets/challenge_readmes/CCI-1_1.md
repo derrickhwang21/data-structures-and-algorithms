@@ -2,7 +2,7 @@
 Cracking The Coding Interview - Chapter 1 - Question 1
 Code Challenge - 18: Unique Characters
 
-### Challenge: Code - Radix Sort
+### Challenge: Code - Unique Characters
 Implement an algorithm to determine if a string has all unique characters.
 
 What if you can only use arrays?
