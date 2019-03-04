@@ -40,6 +40,12 @@ Code Challenge 18 - [CCI - 1.1](assets/challenge_readmes/cci-1_1.md)
 
 Code Challenge 19 - [CCI - 1.3](assets/challenge_readmes/cci-1_3.md)
 
+Code Challenge 20 - [CCI - 1.5](assets/challenge_readmes/cci-1_5.md)
+
+Code Challenge 20 - [CCI - 2.1](assets/challenge_readmes/cci-2_1.md)
+
+
+
 
 
 
